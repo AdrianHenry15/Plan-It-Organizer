@@ -1,5 +1,5 @@
 {
-  "name": "orgo",
+  "name": "plan-it",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AdrianHenry15/Orgo.git"
+    "url": "git+https://github.com/AdrianHenry15/plan-it.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AdrianHenry15/Orgo/issues"
+    "url": "https://github.com/AdrianHenry15/plan-it/issues"
   },
-  "homepage": "https://github.com/AdrianHenry15/Orgo#readme",
+  "homepage": "https://github.com/AdrianHenry15/plan-it#readme",
   "devDependencies": {
     "concurrently": "^7.1.0"
   }
