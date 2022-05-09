@@ -1,1 +1,1 @@
-# Plan It
+# Plan It Organizer
