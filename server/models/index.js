@@ -1,7 +1,5 @@
-import User from './User';
-import Comment from './Comment';
-import Plan from './Plan';
-import Reply from './Reply';
-import Category from './Category';
-
-module.exports = { User, Comment, Plan, Reply, Category };
+export { default as User } from './User'
+export { default as Comment } from './Comment'
+export { default as Plan } from './Plan'
+export { default as Reply } from './Reply'
+export { default as Category } from './Category'
