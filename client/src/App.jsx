@@ -3,7 +3,18 @@ import {CommentForm, CommentList, Footer, FriendList, Header, Nav, PlanList, Rep
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+    <Header />
+    <Nav />
+    <PlanList />
+    <FriendList />
+    <CommentForm />
+    <CommentList />
+    <ReplyForm />
+    <ReplyList />
+    <Footer />
+    </>
+
   )
 }
 
