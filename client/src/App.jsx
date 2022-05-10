@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {CommentForm, CommentList, Footer, FriendList, Header, Nav, PlanList, ReplyForm, ReplyList} from './components';
 
 const App = () => {
   return (
