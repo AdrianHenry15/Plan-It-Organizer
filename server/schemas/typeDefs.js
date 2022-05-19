@@ -10,6 +10,7 @@ const typeDefs = gql`
     friendCount: Int
     comments: [Comment]
     friends: [User]
+    plans: [Plan]
 
 }
     type Comment {
@@ -32,6 +33,7 @@ const typeDefs = gql`
     }
     type Plan {
         _id: ID
+        comments: [Comment]
         categories: [Category]
     }
 
