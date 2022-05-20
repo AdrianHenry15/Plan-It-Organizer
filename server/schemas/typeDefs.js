@@ -13,45 +13,38 @@ const typeDefs = gql`
     plans: [Plan]
 
 }
-    type Comment {
+    type Aspiration {
         _id: ID
-        commentText: String
+        title: String
+        description: String
         createdAt: String
-        username: String
-        replyCount: Int
-        replies: [Reply]
-    }
-    type Reply {
-        _id: ID
-        replyBody: String
-        createdAt: String
-        username: String
-    }
-    type Category {
-        _id: ID
-        name: String
-    }
-    type Plan {
-        _id: ID
-        comments: [Comment]
-        categories: [Category]
+        date: String
+        img: String
+        categories: String
+        priority: String
+        genre: String
+        areaOfFocus: String
+        diet: String
+        region: String
+        whatArticle: String
+        isComplete: String
+        
+        
     }
 
     type Query {
         me: User
         users: [User]
         user(username: String!): User
-        comment(username: String): [Comment]
-        comment(_id: ID!): Comment
+        aspiration(username: String): [Aspiration]
+        aspiration(_id: ID!): Aspiration
     }
 
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addComment(commentText: String!): Comment
-        # returns parent comment not newly created reply
-        addReply(CommentId: ID!, replyBody: String!): Comment
-        addFriend(friendId: ID!): User
+        addAspiration(title:String!,description: String!,date: String!, categories:String!): Aspiration
+       
     }
     
     # must return token
