@@ -16,12 +16,12 @@ const resolvers = {
 
             throw new AuthenticationError('Not logged in')
         },
-        // get all comments
+        // get all aspiration
         aspiration: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Aspiration.find().sort({ createdAt: -1 });
         },
-        // get single comment
+        // get single aspiration
         aspiration: async (parent, { _id }) => {
             return Aspiration.findOne({ _id });
         },
@@ -29,16 +29,14 @@ const resolvers = {
         users: async () => {
             return User.find()
                 .select('-__v -password')
-                .populate('friends')
-                .populate('comments');
+                .populate('aspirations');
 
         },
         // get user by username
         user: async (parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
-                .populate('friends')
-                .populate('comments');
+                .populate('aspirations');
         }
     },
     Mutation: {

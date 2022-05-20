@@ -27,9 +27,7 @@ const typeDefs = gql`
         diet: String
         region: String
         whatArticle: String
-        isComplete: String
-        
-        
+        isComplete: Boolean
     }
 
     type Query {
