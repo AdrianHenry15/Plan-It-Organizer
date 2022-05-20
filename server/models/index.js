@@ -1,5 +1,4 @@
 export { default as User } from './User'
-export { default as Comment } from './Comment'
-export { default as Plan } from './Plan'
-export { default as Reply } from './Reply'
-export { default as Category } from './Category'
+export { default as Aspiration } from './Aspiration'
+
+
