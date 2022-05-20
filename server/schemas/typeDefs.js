@@ -11,7 +11,6 @@ const typeDefs = gql`
     comments: [Comment]
     friends: [User]
     plans: [Plan]
-
 }
     type Aspiration {
         _id: ID
@@ -37,7 +36,6 @@ const typeDefs = gql`
         aspiration(username: String): [Aspiration]
         aspiration(_id: ID!): Aspiration
     }
-
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
