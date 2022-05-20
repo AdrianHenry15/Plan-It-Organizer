@@ -8,8 +8,8 @@ const resolvers = {
             if (context.user) {
                 const userData = await User.findOne({})
                     .select('-__v -password')
-                    .populate('comments')
-                    .populate('friends')
+                    .populate('aspirations')
+                   
 
                 return userData;
             }
