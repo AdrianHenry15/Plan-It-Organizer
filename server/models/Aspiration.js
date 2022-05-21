@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateformat')
 
 const aspirationSchema = new Schema(
     {
@@ -64,5 +65,5 @@ const aspirationSchema = new Schema(
         },
     }
 )
-
+const Aspiration = model('Aspiration', aspirationSchema);
 module.exports = Aspiration;

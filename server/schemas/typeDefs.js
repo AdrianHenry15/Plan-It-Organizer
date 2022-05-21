@@ -7,10 +7,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    friendCount: Int
-    comments: [Comment]
-    friends: [User]
-    plans: [Plan]
+    aspiration: [Aspiration]
 }
     type Aspiration {
         _id: ID
@@ -33,7 +30,7 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(username: String!): User
-        aspiration(username: String): [Aspiration]
+        aspirations(username: String): [Aspiration]
         aspiration(_id: ID!): Aspiration
     }
     type Mutation {
