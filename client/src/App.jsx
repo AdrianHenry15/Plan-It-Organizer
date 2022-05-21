@@ -9,7 +9,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 import { Home, Login, Signup, SingleAspiration, NoMatch } from "./pages";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/index";
 import Aspirations from "./components/Aspirations";
 
 const httpLink = createHttpLink({
@@ -34,17 +34,19 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="flex flex-col h-screen bg-gradient-to-b from-slate-900 to-blue-800">
+      <div className="flex flex-col h-screen bg-gradient-to-b from-slate-900 to-blue-700 text-sky-50">
         <Router>
-          <Routes>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/aspirations" component={Aspirations} />
-            <Route render={() => <NoMatch />} />
-          </Routes>
+          <main className="flex-grow">
+            <Routes>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/aspirations" component={Aspirations} />
+              <Route render={() => <NoMatch />} />
+            </Routes>
+          </main>
+          <Nav />
         </Router>
-        <Nav />
       </div>
     </ApolloProvider>
   );
