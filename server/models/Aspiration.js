@@ -60,9 +60,7 @@ const aspirationSchema = new Schema(
 
         },
         isComplete: {
-            type: String,
-            trim: true,
-
+            type: Boolean,
         },
     }
 )
