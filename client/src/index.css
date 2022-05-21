@@ -34,16 +34,6 @@ html, body {
     font-size: 3.5em;
 }
 
-.home {
-    font-size: 2.5em;
-    cursor: pointer;
-    transition: font-size 300ms ease;
-}
-
-.home:hover {
-    font-size: 3em;
-}
-
 
 
 @tailwind base;
