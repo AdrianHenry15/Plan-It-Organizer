@@ -1,25 +1,27 @@
-import React from 'react';
-import {Home, Login, NoMatch, Profile, Signup, SingleComment, SinglePlan} from './pages';
-import Nav from './components/Nav/Nav'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+
+import { Home, Login, Signup, SingleAspiration, NoMatch } from "./pages";
+import Nav from "./components/Nav";
+import Aspirations from "./components/Aspirations";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -31,37 +33,21 @@ const client = new ApolloClient({
 
 function App() {
   return (
-
-// main App component layout
-    // <ApolloProvider client={client}>
-    //   <Router>
-    //     <div>
-    //       <Nav />
-    //       <Routes>
-    //         <Route exact path="/" component={Home} />
-    //         <Route exact path="/login" component={Login} />
-    //         <Route exact path="/signup" component={Signup} />
-    //         <Route exact path="/profile" component={Profile} />
-    //         <Route exact path="/plans/:id" component={SinglePlan} />
-    //         <Route exact path="/comments/:id" component={SingleComment} />
-    //         <Route component={NoMatch} />
-    //       </Routes>
-    //     </div>
-    //   </Router>
-    // </ApolloProvider>
-
-    // so we can see each page as its rendered when in development
-    <>
-    <Nav />
-    <Home />
-    <Login />
-    <Signup />
-    <Profile />
-    <SinglePlan />
-    <SingleComment />
-    <NoMatch />
-    </>
+    <ApolloProvider client={client}>
+      <div className="flex flex-col h-screen bg-gradient-to-b from-slate-900 to-blue-800">
+        <Router>
+          <Routes>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/aspirations" component={Aspirations} />
+            <Route render={() => <NoMatch />} />
+          </Routes>
+        </Router>
+        <Nav />
+      </div>
+    </ApolloProvider>
   );
 }
 
-export default App
+export default App;

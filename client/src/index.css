@@ -1,0 +1,9 @@
+:root {
+    /* background-color: #1e3a8a; */
+}
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
