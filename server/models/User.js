@@ -20,7 +20,12 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
-        savedAspirations: [aspirationSchema],
+
+        aspirations: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Aspiration'
+            }]
     },
     {
         toJSON: {
