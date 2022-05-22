@@ -9,6 +9,12 @@ const typeDefs = gql`
     email: String
     aspiration: [Aspiration]
 }
+  # must return token
+    # optionally includes user data
+    type Auth {
+        token: ID!
+        user: User
+    }
     type Aspiration {
         _id: ID
         title: String
@@ -30,21 +36,16 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(username: String!): User
-        aspiration(username: String): [Aspiration]
-        aspiration(_id: ID!): Aspiration
+        aspirations(username: String): [Aspiration]
+        aspiration(_id: ID!): User
     }
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addAspiration(title:String!,description: String!, categories:String!): Aspiration
+        addAspiration(title:String!,description: String!, categories:String!): User
+        removeAspiration(aspirationId: ID!): User
+        
        
-    }
-    
-    # must return token
-    # optionally includes user data
-    type Auth {
-        token: ID!
-        user: User
     }
 `;
 

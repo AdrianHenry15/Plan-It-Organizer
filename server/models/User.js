@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const { aspirationSchema } = require('./Aspiration')
 
 const userSchema = new Schema(
     {
