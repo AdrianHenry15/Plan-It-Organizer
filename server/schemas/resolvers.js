@@ -79,7 +79,7 @@ const resolvers = {
                 return aspiration;
             }
 
-            throw new AuthenticationError('You need to be logged in!');
+
         },
         // addReply: async (parent, { commentId, replyBody }, context) => {
         //     if (context.user) {

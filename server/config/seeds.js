@@ -4,7 +4,7 @@ const { User, Aspiration } = require("../models");
 db.once("open", async () => {
   await Aspiration.deleteMany();
 
-  const aspirations = await Aspiration.insertMany([
+  const aspiration = await Aspiration.insertMany([
     {
       title: "Productivity",
       description: "This is an aspiration for the productivity",
@@ -34,9 +34,9 @@ db.once("open", async () => {
     username: "Pamela",
     email: "pamela@testmail.com",
     password: "password12345",
-    aspirations: [
+    aspiration: [
       {
-        aspirations: [aspirations[0]._id, aspirations[1]._id],
+        aspirations: [aspiration[0]._id, aspiration[1]._id],
       },
     ],
   });
