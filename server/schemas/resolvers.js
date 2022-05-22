@@ -75,7 +75,7 @@ const resolvers = {
                     // to make sure new document is returned instead of updated document
                     { new: true }
                 );
-
+                console.log(aspiration)
                 return aspiration;
             }
 
