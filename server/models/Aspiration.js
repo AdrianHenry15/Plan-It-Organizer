@@ -65,4 +65,6 @@ const aspirationSchema = new Schema(
     }
 )
 
+const Aspiration = model('Aspiration', aspirationSchema);
+
 module.exports = Aspiration;

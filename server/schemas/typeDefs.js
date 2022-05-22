@@ -7,10 +7,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    friendCount: Int
-    comments: [Comment]
-    friends: [User]
-    plans: [Plan]
+    aspiration: [Aspiration]
 }
     type Aspiration {
         _id: ID
