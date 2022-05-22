@@ -1,0 +1,41 @@
+:root {
+    background-color: #1d4ed8;
+}
+
+:root::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+.new-aspiration {
+    font-size: 3.5em;
+    cursor: pointer;
+    transition: font-size 300ms ease;
+}
+
+.new-aspiration:hover {
+    font-size: 4em;
+}
+
+.mobile-btn {
+    font-size: 3em;
+    cursor: pointer;
+    transition: font-size 300ms ease;
+}
+
+.mobile-btn:hover {
+    font-size: 3.5em;
+}
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Home = () => {
+const Aspirations = () => {
   return (
     <div></div>
   )
 }
 
-export default Home
+export default Aspirations
