@@ -17,7 +17,7 @@ const resolvers = {
             throw new AuthenticationError('Not logged in')
         },
         // get all aspiration
-        aspiration: async (parent, { username }) => {
+        aspirations: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Aspiration.find().sort({ createdAt: -1 });
         },
