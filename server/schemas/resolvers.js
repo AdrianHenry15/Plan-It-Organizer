@@ -81,33 +81,7 @@ const resolvers = {
 
 
         },
-        // addReply: async (parent, { commentId, replyBody }, context) => {
-        //     if (context.user) {
-        //         const updatedComment = await Comment.findOneAndUpdate(
-        //             { _id: commentId },
-        //             { $push: { replies: { replyBody, username: context.user.username } } },
-        //             { new: true, runValidators: true }
-        //         );
-
-        //         return updatedComment;
-        //     }
-
-        //     throw new AuthenticationError('You need to be logged in!')
-        // },
-        // addFriend: async (parent, { friendId }, context) => {
-        //     if (context.user) {
-        //         const updatedUser = await User.findOneAndUpdate(
-        //             { _id: context.user._id },
-        //             // add to set used so that there aren't duplications of friends
-        //             { $addToSet: { friends: friendId } },
-        //             { new: true }
-        //         ).populate('friends')
-
-        //         return updatedUser;
-        //     }
-
-        //     throw new AuthenticationError('You need to be logged in');
-        // }
+      
     }
 };
 
