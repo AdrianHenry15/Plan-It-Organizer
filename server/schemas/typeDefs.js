@@ -13,10 +13,10 @@ const typeDefs = gql`
         _id: ID
         title: String
         description: String
+        categories: String
         createdAt: String
         date: String
         img: String
-        categories: String
         priority: String
         genre: String
         areaOfFocus: String
