@@ -17,6 +17,24 @@ mutation login(
     }
 }`;
 
+export const ADD_USER = gql`
+mutation addUser(
+    $email: String!
+    $password: String!
+) {
+    addUser(
+        userName: $userName
+        email: $email
+        password: $password
+    ) {
+        token
+        user {
+            _id
+        }
+    }
+}
+`;
+
 export const SAVE_ASPIRATION = gql`
 mutation saveAspiration($newPlan: InputAspiration!) {
     savePlan(newAspiration: $newAspiration) {
