@@ -40,7 +40,10 @@
   
   /* General sidebar styles */
   .bm-menu {
-    background: #373a47;
+    /* background: #373a47; */
+    background: linear-gradient(to bottom, #334155, #1e3a8a);
+    background-size: cover;
+    /* opacity: 0.7; */
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
   }
