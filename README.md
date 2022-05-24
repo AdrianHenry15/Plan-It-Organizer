@@ -17,7 +17,6 @@ The following tools were used for this application:
 - GraphQL
 - Tailwind CSS
 - JWTs
-- 
 
 # Usage
 
@@ -26,5 +25,5 @@ This application lets the user sign in and create different aspirations to store
 
 # Questions
 
-If you have any questions about the repo, open an issue or contact me on GitHub at adrianhenry15 or contact my email
-address at adrianhenry2115@gmail.com
+If you have any questions about the repo, open an issue or contact me on GitHub at adrianhenry15 or contact my our email addresses
+address at adrianhenry2115@gmail.com,
