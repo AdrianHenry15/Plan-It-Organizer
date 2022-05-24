@@ -13,10 +13,10 @@ const typeDefs = gql`
         _id: ID
         title: String
         description: String
+        categories: String
         createdAt: String
         date: String
         img: String
-        categories: String
         priority: String
         genre: String
         areaOfFocus: String
@@ -25,7 +25,6 @@ const typeDefs = gql`
         whatArticle: String
         isComplete: Boolean
     }
-
     type Query {
         me: User
         users: [User]
