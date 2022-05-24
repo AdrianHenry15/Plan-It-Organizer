@@ -77,8 +77,7 @@ const resolvers = {
                 console.log(aspiration)
                 return aspiration;
             }
-
-
+            throw new AuthenticationError('You need to be logged in!');
         },
         removeAspiration: async (parent, { aspirationId }, context) => {
             if (context.user) {
