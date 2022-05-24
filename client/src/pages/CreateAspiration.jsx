@@ -2,7 +2,7 @@ import React from 'react'
 
 const SinglePlan = () => {
   return (
-    <div></div>
+    <div>Test</div>
   )
 }
 

@@ -14,24 +14,35 @@ html, body {
     scroll-behavior: smooth;
 }
 
-.new-aspiration {
-    font-size: 3.5em;
-    cursor: pointer;
-    transition: font-size 300ms ease;
+.new-aspiration-btn {
+    margin-top: .25rem;
+    padding: .75rem;
 }
 
-.new-aspiration:hover {
-    font-size: 4em;
+.new-aspiration-btn:hover {
+    margin-top: .05rem;
+    padding: .65rem;
+}
+
+.new-aspiration {
+    font-size: 3.25em;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+
+.new-aspiration-btn:hover > .new-aspiration {
+    font-size: 3.75em;
 }
 
 .mobile-btn {
-    font-size: 3em;
+    font-size: 3.5em;
     cursor: pointer;
     transition: font-size 300ms ease;
 }
 
 .mobile-btn:hover {
-    font-size: 3.5em;
+    font-size: 4em;
 }
 
 
