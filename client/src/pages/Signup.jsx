@@ -4,41 +4,41 @@ import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Signup = () => {
-  // const [formState, setFormState] = useState({ username: '', email: '', password: '' });
-  // const [addUser, { error }] = useMutation(ADD_USER);
+  const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+  const [addUser, { error }] = useMutation(ADD_USER);
 
-  // // update state based on form input changes
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  //   setFormState({
-  //     ...formState,
-  //     [name]: value,
-  //   });
-  // };
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-  // // submit form
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-  //   try {
-  //     const { data } = await addUser({
-  //       variables: { ...formState }
-  //     });
+    try {
+      const { data } = await addUser({
+        variables: { ...formState }
+      });
       
-  //     Auth.login(data.addUser.token);
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // };
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   return (
     <main className=''>
-      {/* <div className=''>
+      <div className=''>
         <div className=''>
           <h4 className=''>Sign Up</h4>
           <div className=''>
-            <form onSubmit={handleFormSubmit}>
+            <form className='text-slate-900' onSubmit={handleFormSubmit}>
               <input
                 className=''
                 placeholder='Your username'
@@ -66,14 +66,14 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='' type='submit'>
+              <button className='text-sky-50' type='submit'>
                 Submit
               </button>
               {error && <div>Sign up failed</div>}
             </form>
           </div>
         </div>
-      </div> */}
+      </div>
     </main>
   );
 };

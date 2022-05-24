@@ -6,6 +6,9 @@ module.exports = {
     
     // components
     "./src/components/Aspirations/index.jsx",
+    "./src/components/Calendar/index.jsx",
+    "./src/components/GetStarted/index.jsx",
+    "./src/components/HamburgerMenu/index.jsx",
     "./src/components/Nav/index.jsx",
     
     // pages
@@ -13,7 +16,7 @@ module.exports = {
     "./src/pages/Login.jsx",
     "./src/pages/NoMatch.jsx",
     "./src/pages/Signup.jsx",
-    "./src/pages/SingleAspiration.jsx",
+    "./src/pages/CreateAspiration.jsx",
   ],
   theme: {
     extend: {},

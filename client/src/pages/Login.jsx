@@ -38,7 +38,7 @@ const Login = () => {
         <div className=''>
           <h4 className=''>Login</h4>
           <div className=''>
-            <form onSubmit={handleFormSubmit}>
+            <form className='text-slate-900' onSubmit={handleFormSubmit}>
               <input
                 className=''
                 placeholder='Your email'
@@ -57,7 +57,7 @@ const Login = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='' type='submit'>
+              <button className='text-sky-50' type='submit'>
                 Submit
               </button>
               {error && <div>Login failed</div>}
