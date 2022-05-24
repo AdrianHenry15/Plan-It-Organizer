@@ -80,8 +80,18 @@ const resolvers = {
 
 
         },
-
-    }
+        removeAspiration: async (parent, { aspirationId }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { savedAspirations: { aspirationId } } },
+                    { new: true }
+                );
+                return updatedUser;
+            }
+            throw new AuthenticationError('You need to be logged in!')
+        },
+    },
 };
 
 module.exports = resolvers;
