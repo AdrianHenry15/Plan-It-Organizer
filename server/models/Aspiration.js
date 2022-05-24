@@ -13,20 +13,23 @@ const aspirationSchema = new Schema(
             trim: true,
             required: true
         },
-        date: {
-            type: String,
-            trim: true,
-
-        },
-        img: {
-            type: String,
-            trim: true,
-
-        },
         categories: {
             type: String,
             trim: true,
             required: true
+        },
+        date: {
+            type: String,
+            trim: true,
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            get: timestamp => dateFormat(timestamp)
+        },
+        img: {
+            type: String,
+            trim: true,
 
         },
         priority: {
@@ -61,9 +64,7 @@ const aspirationSchema = new Schema(
 
         },
         isComplete: {
-            type: String,
-            trim: true,
-
+            type: Boolean,
         },
     }
 )

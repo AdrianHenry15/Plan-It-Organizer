@@ -20,11 +20,10 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
-      
         aspirations: [
             {
-              type: Schema.Types.ObjectId,
-              ref: 'Aspiration'
+                type: Schema.Types.ObjectId,
+                ref: 'Aspiration'
             }]
     },
     {

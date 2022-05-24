@@ -9,7 +9,6 @@ const resolvers = {
                 const userData = await User.findOne({})
                     .select('-__v -password')
                     .populate('aspirations')
-                   
 
                 return userData;
             }
@@ -17,7 +16,7 @@ const resolvers = {
             throw new AuthenticationError('Not logged in')
         },
         // get all aspiration
-        aspiration: async (parent, { username }) => {
+        aspirations: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Aspiration.find().sort({ createdAt: -1 });
         },
@@ -75,13 +74,23 @@ const resolvers = {
                     // to make sure new document is returned instead of updated document
                     { new: true }
                 );
-
+                console.log(aspiration)
                 return aspiration;
             }
-
             throw new AuthenticationError('You need to be logged in!');
         },
-    }
+        removeAspiration: async (parent, { aspirationId }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { savedAspirations: { aspirationId } } },
+                    { new: true }
+                );
+                return updatedUser;
+            }
+            throw new AuthenticationError('You need to be logged in!')
+        },
+    },
 };
 
 module.exports = resolvers;
