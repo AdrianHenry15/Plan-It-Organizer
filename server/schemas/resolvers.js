@@ -10,7 +10,6 @@ const resolvers = {
                     .select('-__v -password')
                     .populate('aspirations')
 
-
                 return userData;
             }
 

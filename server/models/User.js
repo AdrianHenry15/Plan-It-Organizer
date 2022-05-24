@@ -20,10 +20,18 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
+<<<<<<< HEAD
         aspirations: [
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Aspiration'
+=======
+      
+        aspirations: [
+            {
+              type: Schema.Types.ObjectId,
+              ref: 'Aspiration'
+>>>>>>> develop
             }]
     },
     {
