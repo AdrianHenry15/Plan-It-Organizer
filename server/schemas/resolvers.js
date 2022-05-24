@@ -78,10 +78,7 @@ const resolvers = {
                 console.log(aspiration)
                 return aspiration;
             }
-
-
-        },
-
+        }
     }
 };
 

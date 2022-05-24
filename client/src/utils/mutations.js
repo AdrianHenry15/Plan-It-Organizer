@@ -64,31 +64,31 @@ mutation saveAspiration($newPlan: InputAspiration!) {
     }
 }`;
 
-export const REMOVE_ASPIRATION = gql`
-mutation removeAspiration($aspirationId: ID!) {
-    savePlan(aspirationId: $aspirationId) {
-        _id
-        title
-        description
-        date
-        categories {
-            productivity
-            workouts
-            movies
-            shows
-            songs
-            videoGames
-            food
-            interiorDesign
-            clothing
-            inputNew
-        }
-        priority
-        genre
-        areaOfFocus
-        diet
-        region
-        whatArticle
-        isComplete
-    }
-}`
+// export const REMOVE_ASPIRATION = gql`
+// mutation removeAspiration($aspirationId: ID!) {
+//     savePlan(aspirationId: $aspirationId) {
+//         _id
+//         title
+//         description
+//         date
+//         categories {
+//             productivity
+//             workouts
+//             movies
+//             shows
+//             songs
+//             videoGames
+//             food
+//             interiorDesign
+//             clothing
+//             inputNew
+//         }
+//         priority
+//         genre
+//         areaOfFocus
+//         diet
+//         region
+//         whatArticle
+//         isComplete
+//     }
+// }`
