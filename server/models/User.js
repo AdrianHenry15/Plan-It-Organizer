@@ -20,7 +20,6 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
-
         aspirations: [
             {
                 type: Schema.Types.ObjectId,

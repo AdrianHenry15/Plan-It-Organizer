@@ -36,6 +36,7 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addAspiration(title:String!,description: String!, categories:String!): Aspiration
+        removeAspiration(aspirationId: ID!): User
        
     }
     
