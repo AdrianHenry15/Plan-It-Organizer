@@ -31,7 +31,7 @@ html, body {
 }
 
 
-.new-aspiration-btn:hover > .aspire-hover > .new-aspiration {
+.new-aspiration-btn:hover > .new-aspiration {
     font-size: 3.75em;
 }
 
