@@ -4,6 +4,9 @@ const { User, Aspiration } = require("../models");
 db.once("open", async () => {
   await Aspiration.deleteMany();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> develop
 
   const aspiration = await Aspiration.insertMany([
     {
@@ -23,6 +26,7 @@ db.once("open", async () => {
     }
 
 
+<<<<<<< HEAD
 =======
 
   const aspirations = await Aspiration.insertMany([
@@ -40,6 +44,8 @@ db.once("open", async () => {
    
     
 >>>>>>> develop
+=======
+>>>>>>> develop
   ]);
 
   console.log("categories seeded");
@@ -53,6 +59,7 @@ db.once("open", async () => {
     email: "pamela@testmail.com",
     password: "password12345",
 <<<<<<< HEAD
+<<<<<<< HEAD
     aspiration: [
       {
         aspirations: [aspiration[0]._id, aspiration[1]._id],
@@ -60,6 +67,11 @@ db.once("open", async () => {
     aspirations: [
       {
         aspirations: [aspirations[0]._id, aspirations[1]._id],
+>>>>>>> develop
+=======
+    aspiration: [
+      {
+        aspirations: [aspiration[0]._id, aspiration[1]._id],
 >>>>>>> develop
       },
     ],

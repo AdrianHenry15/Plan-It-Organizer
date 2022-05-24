@@ -21,16 +21,23 @@ const userSchema = new Schema(
             minlength: 5
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
         aspirations: [
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Aspiration'
+<<<<<<< HEAD
 =======
       
         aspirations: [
             {
               type: Schema.Types.ObjectId,
               ref: 'Aspiration'
+>>>>>>> develop
+=======
 >>>>>>> develop
             }]
     },
