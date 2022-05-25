@@ -45,7 +45,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="flex flex-col h-screen bg-gradient-to-b from-slate-900 to-blue-700 text-sky-50">
+      <div className="flex flex-col h-screen bg-gradient-to-b from-rich to-bubblegum text-sky-50">
         <Router>
           <HamburgerMenu />
           <main className="flex-grow">
