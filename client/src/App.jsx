@@ -19,7 +19,7 @@ import Nav from './components/Nav/index';
 import Aspirations from './components/Aspirations';
 import GetStarted from './components/GetStarted';
 import HamburgerMenu from './components/HamburgerMenu';
-import Calendar from './components/Calendar';
+import Calendar from './components/Calendar/Calendar';
 
 import AuthService from './utils/auth';
 
