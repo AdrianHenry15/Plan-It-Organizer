@@ -36,11 +36,11 @@ const Login = () => {
     <div className=''>
       <div className=''>
         <div className=''>
-          <h4 className='flex justify-center'>Login</h4>
+          <h4 className='flex justify-center my-6'>Login</h4>
           <div className='flex justify-center '>
             <form className='text-slate-900 flex flex-col' onSubmit={handleFormSubmit}>
               <input
-                className='w-32 align-middle'
+                className='w-32 my-1 align-middle'
                 placeholder='Your email'
                 name='email'
                 type='email'
@@ -49,7 +49,7 @@ const Login = () => {
                 onChange={handleChange}
               />
               <input
-                className='w-32'
+                className='w-32 my-1 '
                 placeholder='******'
                 name='password'
                 type='password'
@@ -57,7 +57,7 @@ const Login = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='text-sky-50' type='submit'>
+              <button className='text-sky-50 my-6' type='submit'>
                 Submit
               </button>
               {error && <div>Login failed</div>}

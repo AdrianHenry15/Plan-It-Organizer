@@ -36,11 +36,11 @@ const Signup = () => {
     <main className=''>
       <div className=''>
         <div className=''>
-          <h4 className=''>Sign Up</h4>
-          <div className=''>
-            <form className='text-slate-900' onSubmit={handleFormSubmit}>
+          <h4 className='flex justify-center my-6'>Sign Up</h4>
+          <div className='flex justify-center'>
+            <form className='text-slate-900 flex flex-col' onSubmit={handleFormSubmit}>
               <input
-                className=''
+                className='w-32 my-1 align-middle'
                 placeholder='Your username'
                 name='username'
                 type='username'
@@ -49,7 +49,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <input
-                className=''
+                className='w-32 my-1'
                 placeholder='Your email'
                 name='email'
                 type='email'
@@ -58,7 +58,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <input
-                className=''
+                className='w-32 my-1'
                 placeholder='******'
                 name='password'
                 type='password'
@@ -66,7 +66,7 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='text-sky-50' type='submit'>
+              <button className='text-sky-50 my-6' type='submit'>
                 Submit
               </button>
               {error && <div>Sign up failed</div>}
