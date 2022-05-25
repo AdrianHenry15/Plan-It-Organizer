@@ -1,5 +1,5 @@
 :root {
-    background-color: #1d4ed8;
+    background-color: #201F41;
 }
 
 :root::-webkit-scrollbar {
@@ -33,6 +33,7 @@ html, body {
 
 .new-aspiration-btn:hover > .new-aspiration {
     font-size: 3.75em;
+    color: #694784;
 }
 
 .mobile-btn {

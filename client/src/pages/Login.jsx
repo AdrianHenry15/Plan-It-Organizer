@@ -34,13 +34,13 @@ const Login = () => {
 
   return (
     <div className=''>
-      <div className=''>
-        <div className=''>
-          <h4 className=''>Login</h4>
+      <div className='flex h-screen justify-center items-center'>
+        <div className='bg-gradient-to-b from-rich-500 to-wine-500 rounded-lg mx-28 w-60 py-2'>
+          <h4 className='text-center text-xl my-6'>Login</h4>
           <div className=''>
-            <form className='text-slate-900' onSubmit={handleFormSubmit}>
+            <form className='text-slate-900 flex flex-col' onSubmit={handleFormSubmit}>
               <input
-                className=''
+                className='w-32 my-1 mx-auto align-middle rounded-sm'
                 placeholder='Your email'
                 name='email'
                 type='email'
@@ -49,7 +49,7 @@ const Login = () => {
                 onChange={handleChange}
               />
               <input
-                className=''
+                className='w-32 mx-auto my-1 rounded-sm'
                 placeholder='******'
                 name='password'
                 type='password'
@@ -57,7 +57,7 @@ const Login = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='text-sky-50' type='submit'>
+              <button className='text-sky-50 my-6 bg-rose-300 hover:bg-bubblegum-100 hover:text-bubblegum-500 hover:font-semibold transition-all duration-300 mx-auto p-1 rounded-md' type='submit'>
                 Submit
               </button>
               {error && <div>Login failed</div>}
