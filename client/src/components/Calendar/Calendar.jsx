@@ -1,55 +1,34 @@
-import React from 'react'
-import "./Calendar.css"
+import React, { useEffect, useContext, useState } from 'react';
+import "./Calendar.css";
+import {getMonth} from "./calendarUtil"
+import CalendarHeader from './CalendarComponents/CalendarHeader';
+import Sidebar from "./CalendarComponents/Sidebar";
+import Month from "./CalendarComponents/Month";
+import GlobalContext from "./CalendarContext/GlobalContext";
+import EventModal from "./CalendarComponents/EventModal";
 
 const Calendar = () => {
+
+  const [currentMonth, setCurrentMonth] = useState(getMonth());
+  const {monthIndex, showEventModal} = useContext(GlobalContext);
+
+  useEffect(() => {
+    setCurrentMonth(getMonth(monthIndex));
+  }, [monthIndex]);
+
   return (
-    <div id='container'>
-      {/* Dynamic */}
-      <div id='header'>
-        <div id="monthDisplay"></div>
-        <div>
-          <button id='backButton'>Back</button>
-          <button id='nextButton'>Next</button>
+    <React.Fragment>
+      {showEventModal && <EventModal />}
+
+      <div className='h-screen flex flex-col'>
+        <CalendarHeader />
+        <div className='flex flex-1'>
+          <Sidebar />
+          <Month month={currentMonth} />
         </div>
       </div>
-    
-    {/* Hard Coded weekdays */}
-      <div id="weekdays">
-        <div>Sunday</div>
-        <div>Monday</div>
-        <div>Tuesday</div>
-        <div>Wednesday</div>
-        <div>Thursday</div>
-        <div>Friday</div>
-        <div>Saturday</div>
-      </div>
-
-      <div id='calendar'></div>
-
-    {/* Modal pop for user input */}
-    <div id='newEventModal'>
-      <h2>New Event</h2>
-
-      <input id="eventTitleInput" placeholder='Event Title' />
-
-      <button id='saveButton'>Save</button>
-      <button id='cancelButton'>Cancel</button>
-    </div>
-
-    <div id='deleteEventModal'>
-      <h2>Event</h2>
-
-      <p id='eventText'></p>
-      <button id='deleteButton'>Delete</button>
-      <button id='closeButton'>Close</button>
-    </div>
-
-    <div id='modalBackDrop'></div>
-
-    </div>
-
-   
+    </React.Fragment>
   )
 }
 
-export default Calendar
+export default Calendar;
