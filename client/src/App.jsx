@@ -52,7 +52,7 @@ function App() {
           <HamburgerMenu />
           <main className="flex-grow">
             <Routes>
-              <Route path="/" element={AuthService.loggedIn ? <Home /> : <GetStarted />} />
+              <Route path="/" element={AuthService.loggedIn() ? <Home /> : <GetStarted />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/aspirations" element={<Aspirations/>} />
