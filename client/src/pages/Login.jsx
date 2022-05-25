@@ -36,11 +36,11 @@ const Login = () => {
     <div className=''>
       <div className=''>
         <div className=''>
-          <h4 className=''>Login</h4>
-          <div className=''>
-            <form className='text-slate-900' onSubmit={handleFormSubmit}>
+          <h4 className='flex justify-center'>Login</h4>
+          <div className='flex justify-center '>
+            <form className='text-slate-900 flex flex-col' onSubmit={handleFormSubmit}>
               <input
-                className=''
+                className='w-32 align-middle'
                 placeholder='Your email'
                 name='email'
                 type='email'
@@ -49,7 +49,7 @@ const Login = () => {
                 onChange={handleChange}
               />
               <input
-                className=''
+                className='w-32'
                 placeholder='******'
                 name='password'
                 type='password'
