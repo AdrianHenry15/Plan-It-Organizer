@@ -45,10 +45,12 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addAspiration(title:String!,description: String!, categories:String!, folderId:ID!): Aspiration
+        addAspiration(title:String!, description: String!, categories:String!, folderId:ID!): Aspiration
         removeAspiration(aspirationId: ID!, folderId: ID!): User
+        updateAspiration(aspirationId: ID!, title:String!, description: String!, categories:String!): Folder
         addFolder(title:String!): Folder
         removeFolder(folderId: ID!): User
+        updateFolder(folderId: ID!, title:String!): Folder
     }
     
     # must return token

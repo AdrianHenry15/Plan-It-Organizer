@@ -115,6 +115,17 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
+        updateAspiration: async (parent, args, context) => {
+            if (context.user) {
+                // update all contents of aspiration
+                const updatedAspiration = await Aspiration.findByIdAndUpdate(
+                    { _id: args.aspirationId },
+                    { ...args, username: context.user._id }
+                );
+                return updatedAspiration;
+            }
+            throw new AuthenticationError('You need to be logged in!')
+        },
         addFolder: async (parent, args, context) => {
             // if user logged in
             if (context.user) {
@@ -143,6 +154,17 @@ const resolvers = {
                 // delete the folder
                 await Folder.findByIdAndDelete({ folderId });
                 return updatedUser;
+            }
+            throw new AuthenticationError('You need to be logged in!')
+        },
+        updateFolder: async (parent, args, context) => {
+            if (context.user) {
+                // update all contents of folder
+                const updatedFolder = await Aspiration.findByIdAndUpdate(
+                    { _id: args.folderId },
+                    { ...args, username: context.user._id }
+                );
+                return updatedFolder;
             }
             throw new AuthenticationError('You need to be logged in!')
         },
