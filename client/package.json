@@ -15,11 +15,13 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.20.5",
     "babel-plugin-macros": "^3.1.0",
+    "date-fns": "^2.28.0",
     "dayjs": "^1.11.2",
     "graphql": "^16.4.0",
     "jwt-decode": "^3.1.2",
     "react": "^18.1.0",
     "react-burger-menu": "^3.0.6",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
@@ -50,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.2",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.0.24"
