@@ -40,7 +40,7 @@ const Signup = () => {
           <div className=''>
             <form className='text-slate-900 flex flex-col' onSubmit={handleFormSubmit}>
               <input
-                className='w-32 my-1 mx-auto align-middle rounded-sm'
+                className='w-32 my-1 mx-auto align-middle px-1'
                 placeholder='Your username'
                 name='username'
                 type='username'
@@ -49,7 +49,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <input
-                className='w-32 mx-auto my-1 rounded-sm'
+                className='w-32 mx-auto my-1 px-1'
                 placeholder='Your email'
                 name='email'
                 type='email'
@@ -58,7 +58,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <input
-                className='w-32 mx-auto my-1 rounded-sm'
+                className='w-32 mx-auto my-1 px-1'
                 placeholder='******'
                 name='password'
                 type='password'
@@ -66,7 +66,7 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='text-sky-50 my-6 bg-rose-300 hover:bg-bubblegum-100 hover:text-bubblegum-500 hover:font-semibold transition-all duration-300 mx-auto p-1 rounded-md' type='submit'>
+              <button className='text-sky-50 my-6 bg-rose-300 hover:bg-bubblegum-400 transition-all duration-300 mx-auto p-1 rounded-md' type='submit'>
                 Submit
               </button>
               {error && <div>Sign up failed</div>}
