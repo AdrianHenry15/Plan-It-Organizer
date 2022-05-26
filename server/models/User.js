@@ -20,11 +20,12 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
-        aspirations: [
+        folders: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Aspiration'
-            }]
+                ref: 'Folder'
+            }
+        ]
     },
     {
         toJSON: {

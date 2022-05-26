@@ -49,7 +49,7 @@ const resolvers = {
         }
     },
     Mutation: {
-        // User sign up
+        // user sign up
         addUser: async (parent, args) => {
             const user = await User.create(args);
             const token = signToken(user);
@@ -116,14 +116,15 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!')
         },
         
-        addFolder: async (parent, args, context) => {
+        addFolder: async (parent, { title }, context) => {
             // if user logged in
             if (context.user) {
-                const folder = await Folder.create({ ...args, username: context.user.username });
+                // console.log(context);
+                const folder = await Folder.create({ title });
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { folders: folder._id } },
+                    { $push: { folders: folder } },
                     // to make sure new document is returned instead of updated document
                     { new: true }
                 );
