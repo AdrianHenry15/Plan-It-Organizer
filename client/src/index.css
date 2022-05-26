@@ -33,7 +33,7 @@ html, body {
 
 .new-aspiration-btn:hover > .new-aspiration {
     font-size: 3.75em;
-    color: #694784;
+    color: #da93a5;
 }
 
 .mobile-btn {
@@ -45,6 +45,8 @@ html, body {
 .mobile-btn:hover {
     font-size: 4em;
 }
+
+
 
 
 
