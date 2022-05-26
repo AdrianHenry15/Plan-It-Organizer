@@ -1,5 +1,6 @@
-export { default as User } from './User'
-export { default as Comment } from './Comment'
-export { default as Plan } from './Plan'
-export { default as Reply } from './Reply'
-export { default as Category } from './Category'
+
+
+const User = require('./User');
+const Aspiration = require('./Aspiration');
+
+module.exports = { User, Aspiration };

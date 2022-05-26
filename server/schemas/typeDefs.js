@@ -7,20 +7,16 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    friendCount: Int
-    comments: [Comment]
-    friends: [User]
-    plans: [Plan]
-
+    aspiration: [Aspiration]
 }
     type Aspiration {
         _id: ID
         title: String
         description: String
+        categories: String
         createdAt: String
         date: String
         img: String
-        categories: String
         priority: String
         genre: String
         areaOfFocus: String
@@ -29,19 +25,18 @@ const typeDefs = gql`
         whatArticle: String
         isComplete: Boolean
     }
-
     type Query {
         me: User
         users: [User]
         user(username: String!): User
-        aspiration(username: String): [Aspiration]
+        aspirations(username: String): [Aspiration]
         aspiration(_id: ID!): Aspiration
     }
-
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addAspiration(title:String!,description: String!, categories:String!): Aspiration
+        removeAspiration(aspirationId: ID!): User
        
     }
     
