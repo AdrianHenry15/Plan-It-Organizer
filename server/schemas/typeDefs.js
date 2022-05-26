@@ -29,6 +29,7 @@ const typeDefs = gql`
     type Folder {
         _id: ID
         title: String
+        createdAt: String
         aspirations: [Aspiration]
     }
     type Query {
