@@ -84,17 +84,29 @@ const resolvers = {
                     // to make sure new document is returned instead of updated document
                     { new: true }
                 );
+
+                await Folder.findByIdAndUpdate(
+                    { _id: args.folderId },
+                    { $push: { aspirations: aspiration._id } },
+                    { new: true }
+                )
                 return aspiration;
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        removeAspiration: async (parent, { aspirationId }, context) => {
+        removeAspiration: async (parent, { aspirationId, folderId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { aspirations: { aspirationId } } },
+                    { $pull: { aspirations:  aspirationId } },
                     { new: true }
                 );
+
+                await Folder.findByIdAndUpdate(
+                    { _id: folderId },
+                    { $pull: { aspirations: aspirationId } },
+                    { new: true }
+                )
 
                 await Aspiration.findByIdAndDelete({ aspirationId });
                 return updatedUser;
