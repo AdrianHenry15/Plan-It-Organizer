@@ -8,8 +8,9 @@ export const GET_ME = gql`
             username
             email
             aspirationCount
-            savedAspirations {
+            aspirations {
                 _id: ID
+                folderId: ID
                 title: String
                 description: String
                 categories: String
@@ -23,6 +24,28 @@ export const GET_ME = gql`
                 region: String
                 whatArticle: String
                 isComplete: Boolean
+            }
+            folders {
+                _id: ID
+                title: String
+                createdAt: String
+                aspirations {
+                    _id: ID
+                    folderId: ID
+                    title: String
+                    description: String
+                    categories: String
+                    createdAt: String
+                    date: String
+                    img: String
+                    priority: String
+                    genre: String
+                    areaOfFocus: String
+                    diet: String
+                    region: String
+                    whatArticle: String
+                    isComplete: Boolean
+                }
             }
         }
     }
@@ -36,8 +59,9 @@ export const GET_USERS = gql`
             username
             email
             aspirationCount
-            savedAspirations {
+            aspirations {
                 _id: ID
+                folderId: ID
                 title: String
                 description: String
                 categories: String
@@ -51,6 +75,28 @@ export const GET_USERS = gql`
                 region: String
                 whatArticle: String
                 isComplete: Boolean
+            }
+            folders {
+                _id: ID
+                title: String
+                createdAt: String
+                aspirations {
+                    _id: ID
+                    folderId: ID
+                    title: String
+                    description: String
+                    categories: String
+                    createdAt: String
+                    date: String
+                    img: String
+                    priority: String
+                    genre: String
+                    areaOfFocus: String
+                    diet: String
+                    region: String
+                    whatArticle: String
+                    isComplete: Boolean
+                }
             }
         }
     }
@@ -59,30 +105,54 @@ export const GET_USERS = gql`
 // get single user (by username)
 export const GET_USER = gql`
     {
-        user {
-            _id
-            username
-            email
-            aspirationCount
-            savedAspirations {
-                _id: ID
-                title: String
-                description: String
-                categories: String
-                createdAt: String
-                date: String
-                img: String
-                priority: String
-                genre: String
-                areaOfFocus: String
-                diet: String
-                region: String
-                whatArticle: String
-                isComplete: Boolean
+        query user($username: String) {
+            user(username: $username) {
+                _id
+                username
+                email
+                aspirations {
+                    _id: ID
+                    folderId: ID
+                    title: String
+                    description: String
+                    categories: String
+                    createdAt: String
+                    date: String
+                    img: String
+                    priority: String
+                    genre: String
+                    areaOfFocus: String
+                    diet: String
+                    region: String
+                    whatArticle: String
+                    isComplete: Boolean
+                }
+                folders {
+                    _id: ID
+                    title: String
+                    createdAt: String
+                    aspirations {
+                        _id: ID
+                        folderId: ID
+                        title: String
+                        description: String
+                        categories: String
+                        createdAt: String
+                        date: String
+                        img: String
+                        priority: String
+                        genre: String
+                        areaOfFocus: String
+                        diet: String
+                        region: String
+                        whatArticle: String
+                        isComplete: Boolean
+                    }
+                }
             }
         }
     }
-`
+`;
 
 // get all aspirations
 export const GET_ASPIRATIONS = gql`
@@ -91,17 +161,15 @@ export const GET_ASPIRATIONS = gql`
             _id
             title
             description
-            categories
-            createdAt
+            category
             date
             img
             priority
             genre
-            areaOfFocus
+            focusPoint
             diet
             region
             whatArticle
-            isComplete
         }
     }
 `;
@@ -113,19 +181,65 @@ export const GET_ASPIRATION = gql`
             _id
             title
             description
-            categories
-            createdAt
+            category
             date
             img
             priority
             genre
-            areaOfFocus
+            focusPoint
             diet
             region
             whatArticle
-            isComplete
         }
     }
 `;
 
+// get all folders
+export const GET_FOLDERS = gql`
+    {
+        folders {
+            _id
+            title
+            createdAt
+            aspirations {
+                _id
+                title
+                description
+                category
+                date
+                img
+                priority
+                genre
+                focusPoint
+                diet
+                region
+                whatArticle
+            }
+        }
+    }
+`;
 
+// get single folder
+export const GET_FOLDER = gql`
+    {
+        folder {
+            _id
+            title
+            createdAt
+            aspirations {
+                _id
+                title
+                description
+                category
+                date
+                img
+                priority
+                genre
+                focusPoint
+                diet
+                region
+                whatArticle
+            }
+        }
+    }
+`;
