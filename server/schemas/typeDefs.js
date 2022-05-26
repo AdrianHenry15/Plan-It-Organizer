@@ -15,17 +15,16 @@ const typeDefs = gql`
         folderId: ID
         title: String
         description: String
-        categories: String
+        category: String
         createdAt: String
         date: String
         img: String
         priority: String
         genre: String
-        areaOfFocus: String
+        focusPoint: String
         diet: String
         region: String
         whatArticle: String
-        isComplete: Boolean
     }
     type Folder {
         _id: ID
@@ -44,13 +43,45 @@ const typeDefs = gql`
     }
     type Mutation {
         login(email: String!, password: String!): Auth
+
         addUser(username: String!, email: String!, password: String!): Auth
-        addAspiration(title:String!, description: String!, categories:String!, folderId:ID!): Aspiration
+
+        addAspiration(
+            folderId: ID!,
+            title: String!, 
+            description: String!, 
+            category: String!, 
+            date: String,
+            img: String,
+            priority: String,
+            genre: String,
+            focusPoint: String,
+            diet: String,
+            region: String,
+            whatArticle: String
+        ): Aspiration
+
         removeAspiration(aspirationId: ID!, folderId: ID!): User
-        updateAspiration(aspirationId: ID!, title:String!, description: String!, categories:String!): Folder
+
+        updateAspiration(
+            title: String!, 
+            description: String!, 
+            category: String!, 
+            date: String,
+            img: String,
+            priority: String,
+            genre: String,
+            focusPoint: String,
+            diet: String,
+            region: String,
+            whatArticle: String
+        ): Aspiration
+
         addFolder(title:String!): Folder
+
         removeFolder(folderId: ID!): User
-        updateFolder(folderId: ID!, title:String!): Folder
+
+        updateFolder(folderId: ID!, title: String!): Folder
     }
     
     # must return token

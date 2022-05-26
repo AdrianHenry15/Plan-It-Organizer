@@ -73,6 +73,7 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+        
         addAspiration: async (parent, args, context) => {
             // if user logged in
             if (context.user) {
@@ -95,6 +96,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        
         removeAspiration: async (parent, { aspirationId, folderId }, context) => {
             if (context.user) {
                 // remove from user aspirations array
@@ -115,6 +117,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
+        
         updateAspiration: async (parent, args, context) => {
             if (context.user) {
                 // update all contents of aspiration
@@ -126,6 +129,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
+        
         addFolder: async (parent, args, context) => {
             // if user logged in
             if (context.user) {
@@ -141,6 +145,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        
         removeFolder: async (parent, { folderId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
@@ -157,6 +162,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
+        
         updateFolder: async (parent, args, context) => {
             if (context.user) {
                 // update all contents of folder
