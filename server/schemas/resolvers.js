@@ -77,7 +77,7 @@ const resolvers = {
             // if user logged in
             if (context.user) {
                 const aspiration = await Aspiration.create({ ...args, username: context.user.username });
-
+                // push into user aspirations array
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
                     { $push: { aspirations: aspiration._id } },
@@ -85,6 +85,7 @@ const resolvers = {
                     { new: true }
                 );
 
+                // push into folder aspirations array
                 await Folder.findByIdAndUpdate(
                     { _id: args.folderId },
                     { $push: { aspirations: aspiration._id } },
@@ -96,18 +97,19 @@ const resolvers = {
         },
         removeAspiration: async (parent, { aspirationId, folderId }, context) => {
             if (context.user) {
+                // remove from user aspirations array
                 const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
                     { $pull: { aspirations:  aspirationId } },
                     { new: true }
                 );
-
+                // remove from folder aspirations array
                 await Folder.findByIdAndUpdate(
                     { _id: folderId },
                     { $pull: { aspirations: aspirationId } },
                     { new: true }
                 )
-
+                // delete the aspiration
                 await Aspiration.findByIdAndDelete({ aspirationId });
                 return updatedUser;
             }
@@ -132,13 +134,13 @@ const resolvers = {
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { folders: { folderId } } },
+                    { $pull: { folders: folderId } },
                     { new: true }
                 );
 
                 // delete all aspirations inside the folder
                 await Aspiration.deleteMany({ folderId: folderId });
-
+                // delete the folder
                 await Folder.findByIdAndDelete({ folderId });
                 return updatedUser;
             }
