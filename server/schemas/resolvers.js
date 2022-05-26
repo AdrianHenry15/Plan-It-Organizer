@@ -9,6 +9,7 @@ const resolvers = {
                 const userData = await User.findOne({})
                     .select('-__v -password')
                     .populate('aspirations')
+                    .populate('folders');
 
                 return userData;
             }

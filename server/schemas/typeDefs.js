@@ -7,8 +7,8 @@ const typeDefs = gql`
         _id: ID
         username: String
         email: String
-        aspiration: [Aspiration]
-        folder: [Folder]
+        aspirations: [Aspiration]
+        folders: [Folder]
     }
     type Aspiration {
         _id: ID
