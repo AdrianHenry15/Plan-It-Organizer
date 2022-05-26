@@ -78,14 +78,6 @@ const resolvers = {
             // if user logged in
             if (context.user) {
                 const aspiration = await Aspiration.create({ ...args, username: context.user.username });
-                // push into user aspirations array
-                await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $push: { aspirations: aspiration._id } },
-                    // to make sure new document is returned instead of updated document
-                    { new: true }
-                );
-
                 // push into folder aspirations array
                 await Folder.findByIdAndUpdate(
                     { _id: args.folderId },
@@ -97,22 +89,16 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
         
-        removeAspiration: async (parent, { aspirationId, folderId }, context) => {
+        removeAspiration: async (parent, { _id, folderId }, context) => {
             if (context.user) {
-                // remove from user aspirations array
-                const updatedUser = await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $pull: { aspirations:  aspirationId } },
-                    { new: true }
-                );
                 // remove from folder aspirations array
                 await Folder.findByIdAndUpdate(
                     { _id: folderId },
-                    { $pull: { aspirations: aspirationId } },
+                    { $pull: { aspirations: _id } },
                     { new: true }
                 )
                 // delete the aspiration
-                await Aspiration.findByIdAndDelete({ aspirationId });
+                await Aspiration.findByIdAndDelete({ _id });
                 return updatedUser;
             }
             throw new AuthenticationError('You need to be logged in!')
@@ -122,7 +108,7 @@ const resolvers = {
             if (context.user) {
                 // update all contents of aspiration
                 const updatedAspiration = await Aspiration.findByIdAndUpdate(
-                    { _id: args.aspirationId },
+                    { _id: args._id },
                     { ...args, username: context.user._id }
                 );
                 return updatedAspiration;
@@ -146,18 +132,18 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
         
-        removeFolder: async (parent, { folderId }, context) => {
+        removeFolder: async (parent, { _id }, context) => {
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { folders: folderId } },
+                    { $pull: { folders: _id } },
                     { new: true }
                 );
 
                 // delete all aspirations inside the folder
-                await Aspiration.deleteMany({ folderId: folderId });
+                await Aspiration.deleteMany({ folderId: _id });
                 // delete the folder
-                await Folder.findByIdAndDelete({ folderId });
+                await Folder.findByIdAndDelete({ _id });
                 return updatedUser;
             }
             throw new AuthenticationError('You need to be logged in!')

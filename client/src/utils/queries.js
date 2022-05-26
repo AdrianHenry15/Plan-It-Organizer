@@ -7,24 +7,6 @@ export const GET_ME = gql`
             _id
             username
             email
-            aspirationCount
-            aspirations {
-                _id: ID
-                folderId: ID
-                title: String
-                description: String
-                categories: String
-                createdAt: String
-                date: String
-                img: String
-                priority: String
-                genre: String
-                areaOfFocus: String
-                diet: String
-                region: String
-                whatArticle: String
-                isComplete: Boolean
-            }
             folders {
                 _id: ID
                 title: String
@@ -58,24 +40,6 @@ export const GET_USERS = gql`
             _id
             username
             email
-            aspirationCount
-            aspirations {
-                _id: ID
-                folderId: ID
-                title: String
-                description: String
-                categories: String
-                createdAt: String
-                date: String
-                img: String
-                priority: String
-                genre: String
-                areaOfFocus: String
-                diet: String
-                region: String
-                whatArticle: String
-                isComplete: Boolean
-            }
             folders {
                 _id: ID
                 title: String
@@ -110,23 +74,6 @@ export const GET_USER = gql`
                 _id
                 username
                 email
-                aspirations {
-                    _id: ID
-                    folderId: ID
-                    title: String
-                    description: String
-                    categories: String
-                    createdAt: String
-                    date: String
-                    img: String
-                    priority: String
-                    genre: String
-                    areaOfFocus: String
-                    diet: String
-                    region: String
-                    whatArticle: String
-                    isComplete: Boolean
-                }
                 folders {
                     _id: ID
                     title: String

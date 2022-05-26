@@ -7,7 +7,6 @@ const typeDefs = gql`
         _id: ID
         username: String
         email: String
-        aspirations: [Aspiration]
         folders: [Folder]
     }
     type Aspiration {
@@ -59,11 +58,12 @@ const typeDefs = gql`
             diet: String,
             region: String,
             whatArticle: String
-        ): Aspiration
+        ): Folder
 
-        removeAspiration(aspirationId: ID!, folderId: ID!): User
+        removeAspiration(_id: ID!, folderId: ID!): Folder
 
         updateAspiration(
+            _id: ID!,
             title: String!, 
             description: String!, 
             category: String!, 
@@ -79,9 +79,9 @@ const typeDefs = gql`
 
         addFolder(title:String!): Folder
 
-        removeFolder(folderId: ID!): User
+        removeFolder(_id: ID!): User
 
-        updateFolder(folderId: ID!, title: String!): Folder
+        updateFolder(_id: ID!, title: String!): Folder
     }
     
     # must return token
