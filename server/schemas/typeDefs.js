@@ -4,11 +4,12 @@ const { gql } = require('apollo-server-express');
 // create out typeDefs for explicit schema types
 const typeDefs = gql`
     type User {
-    _id: ID
-    username: String
-    email: String
-    aspiration: [Aspiration]
-}
+        _id: ID
+        username: String
+        email: String
+        aspiration: [Aspiration]
+        folder: [Folder]
+    }
     type Aspiration {
         _id: ID
         title: String
@@ -25,19 +26,27 @@ const typeDefs = gql`
         whatArticle: String
         isComplete: Boolean
     }
+    type Folder {
+        _id: ID
+        title: String
+        aspirations: [Aspiration]
+    }
     type Query {
         me: User
         users: [User]
         user(username: String!): User
         aspirations(username: String): [Aspiration]
         aspiration(_id: ID!): Aspiration
+        folders(username: String): [Folder]
+        folder(_id: ID!): Folder
     }
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addAspiration(title:String!,description: String!, categories:String!): Aspiration
         removeAspiration(aspirationId: ID!): User
-       
+        addFolder(title:String!): Folder
+        removeFolder(folderId: ID!): User
     }
     
     # must return token
