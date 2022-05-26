@@ -16,7 +16,7 @@ const Nav = () => {
     <div className="shrink-0 mt-auto sticky bottom-0 bg-rich-500 py-1 flex justify-center items-center">
       <div className="mx-auto">
         <Link to="/">
-          <HomeTwoTone onMouseOver={() => setTwoToneColor('#694784')} className="mobile-btn" style={{color: '#fdf7f3'}}/>
+          <HomeTwoTone className="mobile-btn" style={{color: '#fdf7f3'}}/>
         </Link>
       </div>
       <Link className="mx-auto" to="/aspire">
