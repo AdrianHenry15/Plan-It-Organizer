@@ -46,7 +46,7 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addAspiration(title:String!,description: String!, categories:String!, folderId:ID!): Aspiration
-        removeAspiration(aspirationId: ID!): User
+        removeAspiration(aspirationId: ID!, folderId: ID!): User
         addFolder(title:String!): Folder
         removeFolder(folderId: ID!): User
     }

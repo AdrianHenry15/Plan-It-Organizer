@@ -136,6 +136,9 @@ const resolvers = {
                     { new: true }
                 );
 
+                // delete all aspirations inside the folder
+                await Aspiration.deleteMany({ folderId: folderId });
+
                 await Folder.findByIdAndDelete({ folderId });
                 return updatedUser;
             }
