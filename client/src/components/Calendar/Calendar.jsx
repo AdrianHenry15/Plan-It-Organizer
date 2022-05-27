@@ -1,18 +1,20 @@
-import React from 'react';
-import FullCalendar from '@fullcalendar/react' // must go before plugins
-import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
-import timeGridPlugin from '@fullcalendar/timegrid'
+import 'react-calendar/dist/Calendar.css';
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import Draggable from 'react-draggable'
 
-const Calendar = () => {
+const CalendarApp = () => {
+  const [value, onChange] = useState(new Date());
+
   return (
     <div>
-      <FullCalendar
-        plugins={[ dayGridPlugin, timeGridPlugin ]}
-        
-      />
+      <Draggable>
+      <div><Calendar onChange={onChange} value={value} className={`react-calendar flex flex-col bg-gradient-to-b from-rich-500 to-bubblegum-500 text-rose-500`} /></div>
+      </Draggable>
     </div>
-  )
+  );
 }
 
-export default Calendar
+export default CalendarApp
+
 

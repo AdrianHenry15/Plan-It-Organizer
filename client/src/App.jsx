@@ -19,7 +19,7 @@ import Nav from './components/Nav/index';
 import Aspirations from './components/Aspirations';
 import GetStarted from './components/GetStarted';
 import HamburgerMenu from './components/HamburgerMenu';
-import Calendar from './components/Calendar/Calendar';
+import CalendarApp from './components/Calendar/Calendar';
 
 import AuthService from './utils/auth';
 
@@ -57,7 +57,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/aspirations" element={<Aspirations/>} />
               <Route path="/aspire" element={<CreateAspiration/>} />
-              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/calendar" element={<CalendarApp />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </main>
