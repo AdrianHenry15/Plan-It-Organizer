@@ -25,6 +25,7 @@ const typeDefs = gql`
     diet: String
     region: String
     whatArticle: String
+    username: String
   }
 
   type Folder {
@@ -32,6 +33,7 @@ const typeDefs = gql`
     title: String
     createdAt: String
     aspirations: [Aspiration]
+    username: String
   }
 
   # must return token

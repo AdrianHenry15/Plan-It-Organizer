@@ -66,6 +66,11 @@ const aspirationSchema = new Schema(
         isComplete: {
             type: Boolean,
         },
+
+        username: {
+            type: String
+        }
+
     }
 )
 const Aspiration = model('Aspiration', aspirationSchema);

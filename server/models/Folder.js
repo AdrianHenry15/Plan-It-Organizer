@@ -8,6 +8,9 @@ const folderSchema = new Schema(
             trim: true,
             required: true
         },
+        username: {
+            type: String
+        },
         createdAt: {
             type: Date,
             default: Date.now,

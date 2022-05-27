@@ -73,9 +73,10 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        
+
         addAspiration: async (parent, args, context) => {
             // if user logged in
+
             if (context.user) {
                 const aspiration = await Aspiration.create({ ...args, username: context.user.username });
                 // push into folder aspirations array
@@ -88,7 +89,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        
+
         removeAspiration: async (parent, { _id, folderId }, context) => {
             if (context.user) {
                 // remove from folder aspirations array
@@ -103,7 +104,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
-        
+
         updateAspiration: async (parent, args, context) => {
             if (context.user) {
                 // update all contents of aspiration
@@ -115,9 +116,10 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
-        
+
         addFolder: async (parent, { title }, context) => {
             // if user logged in
+            console.log(title, context.user)
             if (context.user) {
                 // console.log(context);
                 const folder = await Folder.create({ title });
@@ -132,7 +134,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        
+
         removeFolder: async (parent, { _id }, context) => {
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
@@ -149,7 +151,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
-        
+
         updateFolder: async (parent, args, context) => {
             if (context.user) {
                 // update all contents of folder
