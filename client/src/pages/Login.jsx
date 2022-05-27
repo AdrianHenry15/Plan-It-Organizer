@@ -22,9 +22,10 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const { data } = await login({
+      const {data}  = await login({
         variables: { ...formState }
       });
+      
 
       Auth.login(data.login.token);
     } catch (e) {
