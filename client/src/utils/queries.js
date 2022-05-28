@@ -16,7 +16,7 @@ export const GET_ME = gql`
                     folderId: ID
                     title: String
                     description: String
-                    categories: String
+                    category: String
                     createdAt: String
                     date: String
                     img: String
@@ -59,7 +59,7 @@ export const GET_USERS = gql`
                     folderId: ID
                     title: String
                     description: String
-                    categories: String
+                    category: String
                     createdAt: String
                     date: String
                     img: String
@@ -92,7 +92,7 @@ export const GET_USER = gql`
                         folderId: ID
                         title: String
                         description: String
-                        categories: String
+                        category: String
                         createdAt: String
                         date: String
                         img: String

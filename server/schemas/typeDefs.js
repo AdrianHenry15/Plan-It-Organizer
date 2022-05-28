@@ -75,9 +75,9 @@ const typeDefs = gql`
 
     updateAspiration(
       _id: ID!
-      title: String!
-      description: String!
-      category: String!
+      title: String
+      description: String
+      category: String
       date: String
       img: String
       priority: String
