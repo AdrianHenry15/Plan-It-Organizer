@@ -1,10 +1,61 @@
-import React from 'react'
+import React, {useState} from 'react';
+import {useMutation} from '@apollo/client';
+import {ADD_ASPIRATION} from '../utils/mutations';
+import {QUERY_ASPIRATIONS, QUERY_ME} from '../utils/queries';
 
 const SinglePlan = () => {
 
-  const formSubmit = () => {
-    console.log("success")
-  };
+//   const [addThought, { error }] = useMutation(ADD_THOUGHT, {
+//     update(cache, { data: { addThought } }) {
+
+//         // could potentially not exist yet, so wrap in a try/catch
+//         try {
+//             // update me array's cache
+//             const { me } = cache.readQuery({ query: QUERY_ME });
+//             cache.writeQuery({
+//                 query: QUERY_ME,
+//                 data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
+//             });
+//         } catch (e) {
+//             console.warn("First thought insertion by user!")
+//         }
+
+//         // update thought array's cache
+//         const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
+//         cache.writeQuery({
+//             query: QUERY_THOUGHTS,
+//             data: { thoughts: [addThought, ...thoughts] },
+//         });
+//     }
+// });
+// const [thoughtText, setText] = useState('');
+// const [characterCount, setCharacterCount] = useState(0);
+
+// const handleChange = event => {
+//     if (event.target.value.length <= 280) {
+//         setText(event.target.value);
+//         setCharacterCount(event.target.value.length);
+//     }
+// };
+// const handleFormSubmit = async event => {
+//     event.preventDefault();
+
+//     try {
+//         // add thought to db
+//         await addThought({
+//             variables: { thoughtText }
+//         });
+
+//         setText('');
+//         setCharacterCount(0);
+//     } catch (e) {
+//         console.error(e);
+//     }
+// };
+
+//   const formSubmit = () => {
+//     console.log("success")
+//   };
 
   return (
     <div className=''>
@@ -86,7 +137,7 @@ const SinglePlan = () => {
                 <option value="japanese">Japanese</option>
                 <option value="vietnamese">Vietnamese</option>
                 <option value="korean">Korean</option>
-                <option value="africian">Africian</option>
+                <option value="african">African</option>
                 <option value="other">Other</option>
               </select>
               {/* fix the words */}

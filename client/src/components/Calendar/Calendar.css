@@ -1,3 +1,14 @@
-.react-calendar {
-    text-decoration-color: rosybrown;
+.react-calendar__month-view__days__day--weekend {
+    color:white;
+};
+
+abbr:where([title]) {
+    text-decoration: none;
 }
+
+.react-calendar {
+    width: 3000px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+};
