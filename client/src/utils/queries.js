@@ -33,6 +33,14 @@ export const GET_ME = gql`
     }
 `;
 
+// get username of user
+export const GET_ME_BASIC = gql`
+    me {
+        _id
+        username
+    }
+`
+
 // get all users
 export const GET_USERS = gql`
     {

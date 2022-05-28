@@ -19,7 +19,7 @@ const resolvers = {
         // get all aspirations
         aspirations: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Aspiration.find().sort({ createdAt: -1 });
+            return Aspiration.find(params).sort({ createdAt: -1 });
         },
         // get single aspiration
         aspiration: async (parent, { _id }) => {
@@ -28,7 +28,7 @@ const resolvers = {
         // get all folders (homepage)
         folders: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Folder.find().sort({ createdAt: -1 });
+            return Folder.find(params).sort({ createdAt: -1 });
         },
         // get single folder
         folder: async (parent, { _id }) => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -23,8 +23,6 @@ import Calendar from './components/Calendar';
 
 import AuthService from './utils/auth';
 
-
-
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -45,6 +43,8 @@ const client = new ApolloClient({
 });
 
 function App() {
+const [folderId, setFolderId] = useState('');
+
   return (
     <ApolloProvider client={client}>
       <div className={`flex flex-col h-screen bg-gradient-to-b from-rich-500 to-bubblegum-500 text-sky-50`}>
@@ -52,7 +52,7 @@ function App() {
           <HamburgerMenu />
           <main className="flex-grow">
             <Routes>
-              <Route path="/" element={AuthService.loggedIn() ? <Home /> : <GetStarted />} />
+              <Route path="/" element={AuthService.loggedIn() ? <Home folderId={folderId} setFolderId={setFolderId} /> : <GetStarted />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/aspirations" element={<Aspirations/>} />
