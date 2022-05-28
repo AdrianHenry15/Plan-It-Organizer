@@ -2,7 +2,7 @@ import React from 'react'
 import { FolderTwoTone } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
-const Folders = ({ folders, folderId, setFolderId }) => {
+const Folders = ({ folders }) => {
   if(!folders.length) {
     return <></>;
   }
@@ -11,8 +11,7 @@ const Folders = ({ folders, folderId, setFolderId }) => {
     <div>
       {folders.map(folder => {
         <Link 
-          onClick={() => setFolderId(folder._id)} 
-          to="/folder"
+          to={`/folder/${folder._id}`}
         >
           <div className="flex flex-col">
             <FolderTwoTone />

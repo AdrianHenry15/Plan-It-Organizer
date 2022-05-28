@@ -8,13 +8,15 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
+// pages
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
 import CreateAspiration from './pages/CreateAspiration';
 import NoMatch from './pages/NoMatch';
+import SingleFolder from './pages/SingleFolder';
 
-
+// components
 import Nav from './components/Nav/index';
 import Aspirations from './components/Aspirations';
 import GetStarted from './components/GetStarted';
@@ -52,9 +54,10 @@ const [folderId, setFolderId] = useState('');
           <HamburgerMenu />
           <main className="flex-grow">
             <Routes>
-              <Route path="/" element={AuthService.loggedIn() ? <Home folderId={folderId} setFolderId={setFolderId} /> : <GetStarted />} />
+              <Route path="/" element={AuthService.loggedIn() ? <Home /> : <GetStarted />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/folder/:id" element={<SingleFolder folderId={folderId} />} />
               <Route path="/aspirations" element={<Aspirations/>} />
               <Route path="/aspire" element={<CreateAspiration/>} />
               <Route path="/calendar" element={<Calendar />} />

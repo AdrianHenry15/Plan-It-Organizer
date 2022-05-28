@@ -1,9 +1,9 @@
 import React from 'react'
 import { useQuery } from '@apollo/client';
-import { GET_FOLDERS, GET_ME_BASIC } from '../utils/queries';
+import { GET_FOLDERS } from '../utils/queries';
 import Folders from '../components/Folders';
 
-const Home = ({ folderName, setFolderName }) => {
+const Home = () => {
   const { loading, data } = useQuery(GET_FOLDERS);
 
   const folders = data?.folders || []; // '?.' is for optional chaining
@@ -14,7 +14,7 @@ const Home = ({ folderName, setFolderName }) => {
         <div className="m-auto">Loading...</div>
       ) : (
         <div className="grid grid-cols-3">
-          <Folders folderName={folderName} setFolderName={setFolderName} folders={folders} />
+          <Folders folders={folders} />
           <addFolder />
         </div>
       )}
