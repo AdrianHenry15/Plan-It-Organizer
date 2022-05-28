@@ -35,9 +35,11 @@ export const GET_ME = gql`
 
 // get username of user
 export const GET_ME_BASIC = gql`
-    me {
-        _id
-        username
+    {
+        me {
+            _id
+            username
+        }
     }
 `
 
@@ -76,8 +78,7 @@ export const GET_USERS = gql`
 
 // get single user (by username)
 export const GET_USER = gql`
-    {
-        query user($username: String) {
+        query user($username: String!) {
             user(username: $username) {
                 _id
                 username
@@ -106,7 +107,6 @@ export const GET_USER = gql`
                 }
             }
         }
-    }
 `;
 
 // get all aspirations

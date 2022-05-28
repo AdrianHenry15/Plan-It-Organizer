@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery } from '@apollo/client';
 import { GET_FOLDERS } from '../utils/queries';
 import Folders from '../components/Folders';
+import FolderForm from '../components/Folders'
 
 const Home = () => {
   const { loading, data } = useQuery(GET_FOLDERS);
@@ -15,7 +16,7 @@ const Home = () => {
       ) : (
         <div className="grid grid-cols-3">
           <Folders folders={folders} />
-          <addFolder />
+          <FolderForm />
         </div>
       )}
     </main>

@@ -9,7 +9,7 @@ const Folders = ({ folders }) => {
 
   return (
     <div>
-      {folders.map(folder => {
+      {folders.map(folder => (
         <Link 
           to={`/folder/${folder._id}`}
         >
@@ -18,7 +18,7 @@ const Folders = ({ folders }) => {
             <div className="text-center">{folder.title}</div>
           </div>
         </Link>
-      })}
+      ))}
     </div>
   )
 }
