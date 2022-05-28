@@ -2,12 +2,14 @@
     color:white;
 };
 
+
 abbr:where([title]) {
     text-decoration: none;
 }
 
 .react-calendar {
     width: 3000px;
+    border: none;
     /* display: flex;
     align-items: center;
     justify-content: center; */

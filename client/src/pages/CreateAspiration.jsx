@@ -1,61 +1,6 @@
-import React, {useState} from 'react';
-import {useMutation} from '@apollo/client';
-import {ADD_ASPIRATION} from '../utils/mutations';
-import {GET_ASPIRATIONS, GET_ME} from '../utils/queries';
+import React from 'react';
 
 const SinglePlan = () => {
-
-  const [addAspiration, { error }] = useMutation(ADD_ASPIRATION, {
-    update(cache, { data: { addAspiration } }) {
-
-        // could potentially not exist yet, so wrap in a try/catch
-        try {
-            // update me array's cache
-            const { me } = cache.readQuery({ query: GET_ME });
-            cache.writeQuery({
-                query: GET_ME,
-                data: { me: { ...me, thoughts: [...me.aspirations, addAspiration] } },
-            });
-        } catch (e) {
-            console.warn("First thought insertion by user!")
-        }
-
-        // update thought array's cache
-        const { aspirations } = cache.readQuery({ query: GET_ASPIRATIONS });
-        cache.writeQuery({
-            query: GET_ASPIRATIONS,
-            data: { aspirations: [addAspiration, ...aspirations] },
-        });
-    }
-});
-const [aspirationText, setText] = useState('');
-const [characterCount, setCharacterCount] = useState(0);
-
-const handleChange = event => {
-    if (event.target.value.length <= 280) {
-        setText(event.target.value);
-        setCharacterCount(event.target.value.length);
-    }
-};
-const handleFormSubmit = async event => {
-    event.preventDefault();
-
-    try {
-        // add thought to db
-        await addAspiration({
-            variables: { aspirationText }
-        });
-
-        setText('');
-        setCharacterCount(0);
-    } catch (e) {
-        console.error(e);
-    }
-};
-
-  const formSubmit = () => {
-    console.log("success")
-  };
 
   return (
     <div className=''>

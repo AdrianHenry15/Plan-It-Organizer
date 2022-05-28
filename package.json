@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "react-calendar": "^3.7.0",
-    "react-dater": "^1.6.0"
+    "react-dater": "^1.6.0",
+    "react-icons": "^4.3.1"
   }
 }
