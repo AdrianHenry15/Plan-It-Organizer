@@ -35,12 +35,17 @@ const Signup = () => {
   return (
     <main className=''>
       <div className='flex h-screen justify-center items-center'>
-        <div className='bg-gradient-to-b from-rich-500 to-wine-500 rounded-lg mx-28 w-60 py-2'>
+        <div className='bg-gradient-to-b from-bubblegum-500 to-wine-400 rounded-lg mx-28 w-80 py-2'>
+        <a className='mx-auto' href="/login">
+              <button className=' mb-4 hover:bg-wine-400 transition-all duration-300 mx-auto p-2 mx-2 rounded-md' type='submit'>
+                Login
+              </button>
+              </a>
           <h4 className='text-center my-6 text-xl'>Sign Up</h4>
           <div className=''>
             <form className='text-slate-900 flex flex-col' onSubmit={handleFormSubmit}>
               <input
-                className='w-32 my-1 mx-auto align-middle px-1'
+                className='w-50 my-1 mx-auto align-middle px-1'
                 placeholder='Your username'
                 name='username'
                 type='username'
@@ -49,7 +54,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <input
-                className='w-32 mx-auto my-1 px-1'
+                className='w-50 mx-auto my-1 px-1'
                 placeholder='Your email'
                 name='email'
                 type='email'
@@ -58,7 +63,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <input
-                className='w-32 mx-auto my-1 px-1'
+                className='w-50 mx-auto my-1 px-1'
                 placeholder='******'
                 name='password'
                 type='password'
@@ -66,10 +71,11 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='text-sky-50 my-6 bg-rose-300 hover:bg-bubblegum-400 transition-all duration-300 mx-auto p-1 rounded-md' type='submit'>
+              <button className='text-sky-50 my-6 bg-rose-300 hover:bg-wine-300 transition-all duration-300 mx-auto p-2 rounded-md' type='submit'>
                 Submit
               </button>
-              {error && <div>Sign up failed</div>}
+             
+              {error && <div className='mx-auto'>Sign up failed</div>}
             </form>
           </div>
         </div>
