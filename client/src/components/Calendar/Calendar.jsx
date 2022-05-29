@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import './Calendar.css'
 
-const CalendarApp = ({formatLongDate}) => {
+const CalendarApp = () => {
   const [value, onChange] = useState(new Date());
   const [modal, setModal] = useState([])
 
@@ -12,7 +12,7 @@ const CalendarApp = ({formatLongDate}) => {
     <div>
         <Calendar 
         onChange={onChange} 
-        formatDayLong={setModal}
+        formatLongDate={setModal}
         
         value={value} 
         className={`place-items-center h-screen justify-center flex flex-col bg-gradient-to-b from-rich-500 to-bubblegum-500 text-rose-500`}  
