@@ -5,6 +5,12 @@
     color: #757575;
   }
 
+  .react-calendar {
+    /* background: none !important; */
+    
+  }
+
+
 .react-calendar__tile {
     margin: 20px 10px;
     cursor: pointer;

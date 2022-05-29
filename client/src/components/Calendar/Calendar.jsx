@@ -9,13 +9,13 @@ const CalendarApp = () => {
   const [modal, setModal] = useState([])
 
   return (
-    <div>
+    <div className={`m-auto`}>
         <Calendar 
         onChange={onChange} 
         formatLongDate={setModal}
         
         value={value} 
-        className={`place-items-center h-screen justify-center flex flex-col bg-gradient-to-b from-rich-500 to-bubblegum-500 text-rose-500`}  
+        className={`bg-gradient-to-b from-rich-500 to-bubblegum-500 text-rose-500`}  
         />
     </div>
   );
