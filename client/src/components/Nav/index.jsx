@@ -6,10 +6,9 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { CarryOutTwoTone, HomeTwoTone } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
-import { getTwoToneColor, setTwoToneColor } from '@ant-design/icons';
+import { setTwoToneColor } from '@ant-design/icons';
 
 setTwoToneColor('#D1788F');
-getTwoToneColor(); // #eb2f96
 
 const Nav = () => {
   return (

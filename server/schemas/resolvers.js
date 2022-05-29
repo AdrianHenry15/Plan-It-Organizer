@@ -6,9 +6,9 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
-                const userData = await User.findOne({})
+                console.log(context.user);
+                const userData = await User.findOne({ _id: context.user._id })
                     .select('-__v -password')
-                    .populate('aspirations')
                     .populate('folders');
 
                 return userData;
@@ -19,7 +19,7 @@ const resolvers = {
         // get all aspirations
         aspirations: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Aspiration.find().sort({ createdAt: -1 });
+            return Aspiration.find(params).sort({ createdAt: -1 });
         },
         // get single aspiration
         aspiration: async (parent, { _id }) => {
@@ -28,7 +28,7 @@ const resolvers = {
         // get all folders (homepage)
         folders: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Folder.find().sort({ createdAt: -1 });
+            return Folder.find(params).sort({ createdAt: -1 });
         },
         // get single folder
         folder: async (parent, { _id }) => {
@@ -38,14 +38,14 @@ const resolvers = {
         users: async () => {
             return User.find()
                 .select('-__v -password')
-                .populate('aspirations');
+                .populate('folders');
 
         },
         // get user by username
         user: async (parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
-                .populate('aspirations');
+                .populate('folders');
         }
     },
     Mutation: {
@@ -78,7 +78,7 @@ const resolvers = {
             // if user logged in
 
             if (context.user) {
-                const aspiration = await Aspiration.create({ ...args, username: context.user.username });
+                const aspiration = await Aspiration.create({ ...args });
                 // push into folder aspirations array
                 await Folder.findByIdAndUpdate(
                     { _id: args.folderId },
@@ -93,14 +93,14 @@ const resolvers = {
         removeAspiration: async (parent, { _id, folderId }, context) => {
             if (context.user) {
                 // remove from folder aspirations array
-                await Folder.findByIdAndUpdate(
+                const updatedFolder = await Folder.findByIdAndUpdate(
                     { _id: folderId },
                     { $pull: { aspirations: _id } },
                     { new: true }
                 )
                 // delete the aspiration
                 await Aspiration.findByIdAndDelete({ _id });
-                return updatedUser;
+                return updatedFolder;
             }
             throw new AuthenticationError('You need to be logged in!')
         },
@@ -110,7 +110,8 @@ const resolvers = {
                 // update all contents of aspiration
                 const updatedAspiration = await Aspiration.findByIdAndUpdate(
                     { _id: args._id },
-                    { ...args, username: context.user._id }
+                    { ...args, username: context.user._id },
+                    { new: true }
                 );
                 return updatedAspiration;
             }
@@ -155,9 +156,10 @@ const resolvers = {
         updateFolder: async (parent, args, context) => {
             if (context.user) {
                 // update all contents of folder
-                const updatedFolder = await Aspiration.findByIdAndUpdate(
-                    { _id: args.folderId },
-                    { ...args, username: context.user._id }
+                const updatedFolder = await Folder.findByIdAndUpdate(
+                    { _id: args._id },
+                    { ...args, username: context.user._id },
+                    { new: true }
                 );
                 return updatedFolder;
             }
