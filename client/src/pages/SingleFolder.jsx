@@ -3,8 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_FOLDER } from '../utils/queries';
 
-const SingleFolder = () => {
-    const { id: folderId } = useParams();
+const SingleFolder = ({ folderId }) => {
+    // const { id: folderName } = useParams();
+    console.log(folderId);
 
     const { loading, data } = useQuery(GET_FOLDER, {
         variables: { id: folderId }

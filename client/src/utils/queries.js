@@ -2,33 +2,30 @@ import { gql } from '@apollo/client';
 
 // get session user
 export const GET_ME = gql`
-    {
+    query Query {
         me {
+        _id
+        username
+        email
+        folders {
             _id
-            username
-            email
-            folders {
-                _id: ID
-                title: String
-                createdAt: String
-                aspirations {
-                    _id: ID
-                    folderId: ID
-                    title: String
-                    description: String
-                    category: String
-                    createdAt: String
-                    date: String
-                    img: String
-                    priority: String
-                    genre: String
-                    areaOfFocus: String
-                    diet: String
-                    region: String
-                    whatArticle: String
-                    isComplete: Boolean
-                }
+            title
+            aspirations {
+            _id
+            folderId
+            title
+            description
+            createdAt
+            date
+            img
+            priority
+            genre
+            focusPoint
+            diet
+            region
+            whatArticle
             }
+        }
         }
     }
 `;
