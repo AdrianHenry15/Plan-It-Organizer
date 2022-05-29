@@ -13,9 +13,10 @@
     transition: all 500ms ease;
   }
   
-  /* Color/shape of burger icon bars on hover*/
+  /* Color/shape of burger icon bars on */
   .bm-burger-bars-hover {
     background: #fdf7f3;
+    opacity: 100% !important;
   }
   
   /* Position and sizing of clickable cross button */
