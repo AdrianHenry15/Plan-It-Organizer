@@ -6,7 +6,11 @@ const folderSchema = new Schema(
         title: {
             type: String,
             trim: true,
-            required: true
+            required: true,
+            unique: true
+        },
+        username: {
+            type: String
         },
         createdAt: {
             type: Date,

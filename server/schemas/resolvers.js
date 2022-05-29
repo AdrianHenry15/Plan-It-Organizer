@@ -6,9 +6,9 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
-                const userData = await User.findOne({})
+                console.log(context.user);
+                const userData = await User.findOne({ _id: context.user._id })
                     .select('-__v -password')
-                    .populate('aspirations')
                     .populate('folders');
 
                 return userData;
@@ -19,7 +19,7 @@ const resolvers = {
         // get all aspirations
         aspirations: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Aspiration.find().sort({ createdAt: -1 });
+            return Aspiration.find(params).sort({ createdAt: -1 });
         },
         // get single aspiration
         aspiration: async (parent, { _id }) => {
@@ -28,7 +28,7 @@ const resolvers = {
         // get all folders (homepage)
         folders: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Folder.find().sort({ createdAt: -1 });
+            return Folder.find(params).sort({ createdAt: -1 });
         },
         // get single folder
         folder: async (parent, { _id }) => {
@@ -38,14 +38,14 @@ const resolvers = {
         users: async () => {
             return User.find()
                 .select('-__v -password')
-                .populate('aspirations');
+                .populate('folders');
 
         },
         // get user by username
         user: async (parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
-                .populate('aspirations');
+                .populate('folders');
         }
     },
     Mutation: {
@@ -73,11 +73,12 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        
+
         addAspiration: async (parent, args, context) => {
             // if user logged in
+
             if (context.user) {
-                const aspiration = await Aspiration.create({ ...args, username: context.user.username });
+                const aspiration = await Aspiration.create({ ...args });
                 // push into folder aspirations array
                 await Folder.findByIdAndUpdate(
                     { _id: args.folderId },
@@ -88,36 +89,38 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        
+
         removeAspiration: async (parent, { _id, folderId }, context) => {
             if (context.user) {
                 // remove from folder aspirations array
-                await Folder.findByIdAndUpdate(
+                const updatedFolder = await Folder.findByIdAndUpdate(
                     { _id: folderId },
                     { $pull: { aspirations: _id } },
                     { new: true }
                 )
                 // delete the aspiration
                 await Aspiration.findByIdAndDelete({ _id });
-                return updatedUser;
+                return updatedFolder;
             }
             throw new AuthenticationError('You need to be logged in!')
         },
-        
+
         updateAspiration: async (parent, args, context) => {
             if (context.user) {
                 // update all contents of aspiration
                 const updatedAspiration = await Aspiration.findByIdAndUpdate(
                     { _id: args._id },
-                    { ...args, username: context.user._id }
+                    { ...args, username: context.user._id },
+                    { new: true }
                 );
                 return updatedAspiration;
             }
             throw new AuthenticationError('You need to be logged in!')
         },
-        
+
         addFolder: async (parent, { title }, context) => {
             // if user logged in
+            console.log(title, context.user)
             if (context.user) {
                 // console.log(context);
                 const folder = await Folder.create({ title });
@@ -132,7 +135,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        
+
         removeFolder: async (parent, { _id }, context) => {
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
@@ -149,13 +152,14 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
-        
+
         updateFolder: async (parent, args, context) => {
             if (context.user) {
                 // update all contents of folder
-                const updatedFolder = await Aspiration.findByIdAndUpdate(
-                    { _id: args.folderId },
-                    { ...args, username: context.user._id }
+                const updatedFolder = await Folder.findByIdAndUpdate(
+                    { _id: args._id },
+                    { ...args, username: context.user._id },
+                    { new: true }
                 );
                 return updatedFolder;
             }

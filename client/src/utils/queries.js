@@ -16,7 +16,7 @@ export const GET_ME = gql`
                     folderId: ID
                     title: String
                     description: String
-                    categories: String
+                    category: String
                     createdAt: String
                     date: String
                     img: String
@@ -32,6 +32,16 @@ export const GET_ME = gql`
         }
     }
 `;
+
+// get username of user
+export const GET_ME_BASIC = gql`
+    {
+        me {
+            _id
+            username
+        }
+    }
+`
 
 // get all users
 export const GET_USERS = gql`
@@ -49,7 +59,7 @@ export const GET_USERS = gql`
                     folderId: ID
                     title: String
                     description: String
-                    categories: String
+                    category: String
                     createdAt: String
                     date: String
                     img: String
@@ -68,8 +78,7 @@ export const GET_USERS = gql`
 
 // get single user (by username)
 export const GET_USER = gql`
-    {
-        query user($username: String) {
+        query user($username: String!) {
             user(username: $username) {
                 _id
                 username
@@ -83,7 +92,7 @@ export const GET_USER = gql`
                         folderId: ID
                         title: String
                         description: String
-                        categories: String
+                        category: String
                         createdAt: String
                         date: String
                         img: String
@@ -98,7 +107,6 @@ export const GET_USER = gql`
                 }
             }
         }
-    }
 `;
 
 // get all aspirations
