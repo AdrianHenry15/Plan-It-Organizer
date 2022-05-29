@@ -18,7 +18,7 @@ const SinglePlan = () => {
                 
               />
               
-              <input
+              <textarea
               // change the size
                 className='w-32 mx-auto my-1 rounded-sm px-1'
                 placeholder='Add a description'
