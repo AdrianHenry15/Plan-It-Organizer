@@ -63,14 +63,7 @@ const typeDefs = gql`
       title: String!
       description: String!
       category: String!
-      date: String
-      img: String
-      priority: String
-      genre: String
-      focusPoint: String
-      diet: String
-      region: String
-      whatArticle: String
+      priority: String!
     ): Folder
 
     removeAspiration(_id: ID!, folderId: ID!): Folder
