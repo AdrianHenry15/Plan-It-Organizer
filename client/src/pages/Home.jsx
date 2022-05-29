@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { GET_ME } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
 import FolderForm from '../components/Folders';
 import { FolderTwoTone } from "@ant-design/icons";
 
 const Home = ({ setFolderId }) => {
-  const { loading, data } = useQuery(GET_ME);
+  const { loading, data } = useQuery(QUERY_ME);
   const [output, setOutput] = useState('Loading...');
 
   useEffect(() => {

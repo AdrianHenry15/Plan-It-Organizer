@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 // get session user
-export const GET_ME = gql`
+export const QUERY_ME = gql`
     query Query {
         me {
         _id
@@ -31,7 +31,7 @@ export const GET_ME = gql`
 `;
 
 // get username of user
-export const GET_ME_BASIC = gql`
+export const QUERY_ME_BASIC = gql`
     {
         me {
             _id
@@ -41,7 +41,7 @@ export const GET_ME_BASIC = gql`
 `
 
 // get all users
-export const GET_USERS = gql`
+export const QUERY_USERS = gql`
     {
         users {
             _id
@@ -74,7 +74,7 @@ export const GET_USERS = gql`
 `;
 
 // get single user (by username)
-export const GET_USER = gql`
+export const QUERY_USER = gql`
         query user($username: String!) {
             user(username: $username) {
                 _id
@@ -107,7 +107,7 @@ export const GET_USER = gql`
 `;
 
 // get all aspirations
-export const GET_ASPIRATIONS = gql`
+export const QUERY_ASPIRATIONS = gql`
     {
         aspirations {
             _id
@@ -127,7 +127,7 @@ export const GET_ASPIRATIONS = gql`
 `;
 
 // get single aspiration
-export const GET_ASPIRATION = gql`
+export const QUERY_ASPIRATION = gql`
     {
         aspiration {
             _id
@@ -147,7 +147,7 @@ export const GET_ASPIRATION = gql`
 `;
 
 // get all folders
-export const GET_FOLDERS = gql`
+export const QUERY_FOLDERS = gql`
     {
         folders {
             _id
@@ -172,7 +172,7 @@ export const GET_FOLDERS = gql`
 `;
 
 // get single folder
-export const GET_FOLDER = gql`
+export const QUERY_FOLDER = gql`
     {
         folder {
             _id
