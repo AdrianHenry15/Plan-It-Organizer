@@ -5,7 +5,6 @@ const GetStarted = () => {
   return (
     <>
     <div>Testing123</div>
-    <Modal />
     </>
   )
 }

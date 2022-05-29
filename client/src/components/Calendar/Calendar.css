@@ -1,7 +1,26 @@
 .react-calendar__month-view__days__day--weekend {
-    color:white;
-};
+    color: #ffffff;
+  }
+  .react-calendar__month-view__days__day--neighboringMonth {
+    color: #757575;
+  }
 
+.react-calendar__tile {
+    margin: 20px 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 13px 25px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: none;
+    background: #185adb;
+    transition: all 0.25s ease;
+}
+
+.react-calendar__tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+}
 
 abbr:where([title]) {
     text-decoration: none;
@@ -10,7 +29,10 @@ abbr:where([title]) {
 .react-calendar {
     width: 3000px;
     border: none;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+   
 };
+
+
+
+
+
