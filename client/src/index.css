@@ -1,5 +1,12 @@
 :root {
-    background-color: #201F41;
+    background-image: url(./assets/pixilart.png);
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+      
+    position:absolute;
+    top: 0;
+    left: 0;
 }
 
 :root::-webkit-scrollbar {
