@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -48,6 +48,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [folderId, setFolderId] = useState('');
 
   return (
     <ApolloProvider client={client}>
@@ -56,10 +57,10 @@ function App() {
           <HamburgerMenu />
           <main className="flex-grow">
             <Routes>
-              <Route path="/" element={AuthService.loggedIn() ? <Home /> : <GetStarted />} />
+              <Route path="/" element={AuthService.loggedIn() ? <Home setFolderId={setFolderId} /> : <GetStarted />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/folder/:id" element={<SingleFolder />} />
+              <Route path="/folder/:name" element={<SingleFolder folderId={folderId} />} />
               <Route path="/aspirations" element={<Aspirations/>} />
               <Route path="/aspire" element={<CreateAspiration/>} />
               <Route path="/calendar" element={<CalendarApp />} />
