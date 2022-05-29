@@ -9,7 +9,7 @@ db.once("open", async () => {
       title: "Productivity",
       description: "This is an aspiration for the productivity",
       date: new Date,
-      categories: "Health",
+      category: "Health",
       priority: "5"
     },
 
@@ -17,7 +17,7 @@ db.once("open", async () => {
       title: "Right On",
       description: "This is the best of the best",
       date: new Date,
-      categories: "Inspiration",
+      category: "Inspiration",
       priority: "1"
     },
   ]);
@@ -28,17 +28,17 @@ db.once("open", async () => {
     { title: "Productivity" ,
     description: "This is an aspiration for the productivity",
     date: new Date,
-    categories:"Health",
+    category:"Health",
     priority: "5"},
 
     { title: "Right On" ,
     description: "This is the best of the best",
     date: new Date,
-    categories:"Inspiration",
+    category:"Inspiration",
     priority: "1"}
   ]);
 
-  console.log("categories seeded");
+  console.log("category seeded");
 
 
 
