@@ -26,7 +26,7 @@ import CalendarApp from './components/Calendar/Calendar';
 import AuthService from './utils/auth';
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
