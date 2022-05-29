@@ -28,12 +28,12 @@ const Signup = () => {
       
       Auth.login(data.addUser.token);
     } catch (e) {
-      console.error(e);
+      // console.error(e);
     }
   };
 
   return (
-    <main className=' '>
+    <main className=''>
       <div className='flex h-screen justify-center items-center'>
         <div className='bg-gradient-to-b from-rich-500 to-wine-500 rounded-lg mx-28 w-60 py-2'>
           <h4 className='text-center my-6 text-xl'>Sign Up</h4>

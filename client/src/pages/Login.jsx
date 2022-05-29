@@ -10,7 +10,7 @@ const Login = () => {
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
+    
     setFormState({
       ...formState,
       [name]: value,
@@ -22,10 +22,10 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const { data } = await login({
+      const {data}  = await login({
         variables: { ...formState }
       });
-
+      
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);

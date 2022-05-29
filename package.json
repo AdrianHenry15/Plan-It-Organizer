@@ -22,5 +22,9 @@
   "homepage": "https://github.com/AdrianHenry15/plan-it#readme",
   "devDependencies": {
     "concurrently": "^7.1.0"
+  },
+  "dependencies": {
+    "react-calendar": "^3.7.0",
+    "react-dater": "^1.6.0"
   }
 }
