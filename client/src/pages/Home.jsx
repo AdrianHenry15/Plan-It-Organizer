@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
-import FolderForm from '../components/Folders';
+import FolderForm from '../components/FolderForm';
 import { FolderTwoTone } from "@ant-design/icons";
 
 const Home = ({ setFolderId }) => {
@@ -13,6 +13,7 @@ const Home = ({ setFolderId }) => {
     if(loading) {
       return () => { return <div>{output}</div>; }
     } else if (data.me.folders) {
+      const folders = data.me.folders;
       let folderReturn = (
         <div>
           {loading ? (
@@ -20,7 +21,7 @@ const Home = ({ setFolderId }) => {
           ) : (
             <div className="grid grid-cols-3 gap-4 mt-8">
               <div>
-          {data.me.folders.map((folder, index) => (
+          {folders.map((folder, index) => (
             <Link 
               to={`/folder/${folder.title}`}
               key={index}

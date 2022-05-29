@@ -18,7 +18,13 @@ const folderSchema = new Schema(
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Aspiration'
-            }]
+            }
+        ]
+    },
+    {
+      toJSON: {
+        getters: true
+      }
     }
 )
 const Folder = model('Folder', folderSchema);
