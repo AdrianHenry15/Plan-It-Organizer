@@ -25,6 +25,7 @@ const typeDefs = gql`
     diet: String
     region: String
     whatArticle: String
+    username: String
   }
 
   type Folder {
@@ -32,6 +33,7 @@ const typeDefs = gql`
     title: String
     createdAt: String
     aspirations: [Aspiration]
+    username: String
   }
 
   # must return token
@@ -75,9 +77,9 @@ const typeDefs = gql`
 
     updateAspiration(
       _id: ID!
-      title: String!
-      description: String!
-      category: String!
+      title: String
+      description: String
+      category: String
       date: String
       img: String
       priority: String
