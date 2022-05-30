@@ -2,7 +2,7 @@ import React from 'react';
 
 // Styles
 import './index.css';
-
+import {Link} from "react-router-dom";
 // Pages
 import Login from '../../pages/Login';
 
@@ -13,18 +13,18 @@ const GetStarted = () => {
     <p className='landing-text text-6xl'>Save Your Plan-It and Get Organized!</p>
     <div className='pt-3'>
       
-      <a href="/login">
-      <button className="login hover:bg-bubblegum-500 pt-3 pb-3 pl-12 pr-12 text-2xl font-semibold text-center text-white transition-all rounded-full shadow-2xl lg:ml-5  focus:outline-none ring-8 to-wine-500 lg:ring-2 lg:font-medium">
+      <Link to="/login">
+      <button className="hover:bg-bubblegum-500 pt-3 mx-2 pb-3 pl-12 pr-12 text-2xl ring-4 ring-bubblegum-500 font-semibold text-center text-white transition-all rounded-full lg:ml-5  focus:outline-none  lg:font-medium">
         Login
         </button>
-        </a>
+        </Link>
 
-        <a href="/signup">
+        <Link to="/signup">
       <button 
-      className='get_started hover:bg-bubblegum-500 pt-3 pb-3 pl-12 pr-12 text-2xl font-semibold text-center text-white transition-all from-rich-500 rounded-full shadow-2xl lg:ml-5  focus:outline-none ring-4 to-wine-500 lg:ring-2 lg:font-medium'>
-        Get Started
+      className='hover:bg-bubblegum-500 pt-3 pb-3 mx-2 ring-4 ring-bubblegum-500 pl-12 pr-12 text-2xl font-semibold text-center text-white transition-all  rounded-full  lg:ml-5  focus:outline-none  lg:font-medium'>
+        Sign Up
         </button>
-        </a>
+        </Link>
     </div>
     </div>
     </>
