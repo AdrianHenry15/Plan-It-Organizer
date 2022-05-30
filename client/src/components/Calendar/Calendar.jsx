@@ -6,7 +6,7 @@ import './Calendar.css'
 
 const CalendarApp = () => {
   const [value, onChange] = useState(new Date());
-  const [modal, setModal] = useState([])
+  const [setModal] = useState([])
 
   return (
     <div className={`m-auto`}>

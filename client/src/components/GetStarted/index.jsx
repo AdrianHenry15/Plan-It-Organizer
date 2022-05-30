@@ -4,7 +4,7 @@ import React from 'react';
 import './index.css';
 
 // Pages
-import Login from '../../pages/Login';
+
 
 const GetStarted = () => {
   return (
