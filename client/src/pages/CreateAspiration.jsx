@@ -5,8 +5,8 @@ const SinglePlan = () => {
   return (
     <div className=''>
       <div className='flex h-screen justify-center items-center'>
-        <div className='bg-gradient-to-b from-rich-500 to-wine-500 rounded-lg w-3/5 py-2'>
-          <h4 className='text-center text-xl my-6'>Create Aspiration</h4>
+        <div className='bg-gradient-to-b from-bubblegum-400 to-cream-400 rounded-lg w-3/5 py-2'>
+          <h4 className='text-center text-black text-2xl my-6'>Create Aspiration</h4>
           <div className=''>
             <form className='text-slate-900 flex flex-col'>
               <input
@@ -46,7 +46,7 @@ const SinglePlan = () => {
                 <option value="clothing">Clothing</option>
                 <option value="other">Other</option>
               </select>
-              <h3 className="text-center text-white pt-1">Priority</h3>
+              <h3 className="text-center text-black text-xl text-white pt-1">Priority</h3>
               {/* figure out how to display a little sun and pluto on the sides of the slider bar */}
               <input type="range" min="1" max="9" className='w-32 text-rich-200 mx-auto my-1 rounded-sm px-1' />
                 
