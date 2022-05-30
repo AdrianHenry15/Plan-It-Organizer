@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-
+import {Link} from "react-router-dom";
 const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN_USER);
@@ -35,8 +35,8 @@ const Login = () => {
   return (
     <div className=''>
       <div className='flex h-screen justify-center items-center'>
-        <div className='bg-gradient-to-b from-rich-500 to-wine-500 rounded-lg mx-28 w-60 py-2'>
-          <h4 className='text-center text-xl my-6'>Login</h4>
+        <div className='bg-gradient-to-b from-bubblegum-400 to-cream-400 rounded-lg mx-28 w-60 py-2'>
+          <h4 className='text-center text-black text-2xl my-6'>Login</h4>
           <div className=''>
             <form className='text-slate-900 flex flex-col' onSubmit={handleFormSubmit}>
               <input
@@ -57,7 +57,11 @@ const Login = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='text-sky-50 my-6 bg-rose-300 hover:bg-bubblegum-400 transition-all duration-300 mx-auto p-1 rounded-md' type='submit'>
+              <Link className='mx-auto text-center text-blue-600 hover:text-sky-300 transition-all duration-300 mx-auto p-2 mx-2 rounded-md' to="/signup">
+                Don't have an account?
+              
+              </Link>
+              <button className='text-sky-50  mb-2 mt-1 bg-rose-300 hover:bg-bubblegum-400 transition-all duration-300 mx-auto p-1 rounded-md' type='submit'>
                 Submit
               </button>
               {error && <div>Login failed</div>}
