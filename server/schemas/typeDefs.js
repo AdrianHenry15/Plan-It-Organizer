@@ -23,7 +23,7 @@ const typeDefs = gql`
     genre: String
     focusPoint: String
     diet: String
-    region: String
+    culture: String
     whatArticle: String
     username: String
   }

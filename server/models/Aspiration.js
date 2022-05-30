@@ -56,7 +56,7 @@ const aspirationSchema = new Schema(
             trim: true,
 
         },
-        region: {
+        culture: {
             type: String,
             trim: true,
 
