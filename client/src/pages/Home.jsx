@@ -1,34 +1,51 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { GET_ME } from '../utils/queries';
-import Folders from '../components/Folders';
-import FolderForm from '../components/Folders';
-import Auth from '../utils/auth';
+import { QUERY_ME } from '../utils/queries';
+import FolderForm from '../components/FolderForm';
+import { FolderTwoTone } from "@ant-design/icons";
 
-const Home = () => {
-  const param = Auth.getProfile().data.username;
+const Home = ({ setFolderId }) => {
+  const { loading, data } = useQuery(QUERY_ME);
+  const [output, setOutput] = useState('Loading...');
 
-  const { loading, data } = useQuery(GET_ME, {
-    variables: { username: param }
-  });
-  console.log(param);
-  console.log(data);
-
-  const folders = data?.me || []; // '?.' is for optional chaining
-  console.log(folders);
-
-  return (
-    <main>
-      {loading ? (
-        <div className="m-auto">Loading...</div>
-      ) : (
-        <div className="grid grid-cols-3">
-          {/* <Folders folders={folders} /> */}
-          <FolderForm />
+  useEffect(() => {
+    if(loading) {
+      return () => { return <div>{output}</div>; }
+    } else if (data.me.folders) {
+      const folders = data.me.folders;
+      let folderReturn = (
+        <div>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div className="grid grid-cols-3 gap-4 mt-8">
+              <div>
+          {folders.map((folder, index) => (
+            <Link 
+              to={`/folder/${folder.title}`}
+              key={index}
+              onClick={() => setFolderId(folder._id)}
+            >
+              <div className="flex flex-col">
+                <FolderTwoTone className="homepage-folders" />
+                <div className="text-center text-lg">{folder.title}</div>
+              </div>
+            </Link>
+          ))}
         </div>
-      )}
-    </main>
-  )
+        
+              <FolderForm />
+            </div>
+          )}
+        </div>
+      );
+      setOutput(folderReturn);
+      return () => output;
+    }
+  }, [data, loading]);
+  
+  return output;
 }
 
 export default Home

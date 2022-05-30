@@ -1,23 +1,26 @@
 .react-calendar__month-view__days__day--weekend {
     color: #ffffff;
-  }
+  };
   .react-calendar__month-view__days__day--neighboringMonth {
     color: #757575;
+  };
+
+  .react-calendar__month-view__weekdays__weekday {
+    /* text-transform: none !important; */
   }
 
   .react-calendar {
-    /* background: none !important; */
+    background: none !important;
     
-  }
+  };
 
 
 .react-calendar__tile {
     margin: 20px 10px;
     cursor: pointer;
     font-weight: 500;
-    padding: 13px 25px;
+    padding: 30px 25px !important;
     border-radius: 15px;
-    font-size: 0.8rem;
     border: none;
     background: #185adb;
     transition: all 0.25s ease;
@@ -29,7 +32,8 @@
 }
 
 abbr:where([title]) {
-    text-decoration: none;
+    text-decoration: none !important;
+    text-transform: none !important;
 }
 
 .react-calendar {
