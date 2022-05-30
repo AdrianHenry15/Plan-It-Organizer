@@ -13,6 +13,7 @@ This app is a way to keep track of your life.  It offers the ability to create f
  # Table of Contents
 * [Tools](#tools)
 * [Usage](#usage)
+* [Contributing](#contributing)
 * [Questions](#questions)
 * [License](#license)
 
@@ -37,6 +38,12 @@ The following tools were used for this application:
 
 This application lets the user sign in and create different aspirations to store as a reminder of the future plans that may be of importance in that user's life.
 
+# Contributing
+
+- https://github.com/AdrianHenry15
+- https://github.com/garretthilberling
+- https://github.com/jaredpennington
+- https://github.com/Acampbell8610
 
 # Questions
 
