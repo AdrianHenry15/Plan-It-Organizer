@@ -10,6 +10,7 @@ module.exports = {
     "./src/components/GetStarted/index.jsx",
     "./src/components/HamburgerMenu/index.jsx",
     "./src/components/Nav/index.jsx",
+    "./src/components/FolderForm/index.jsx",
 
     // pages
     "./src/pages/Home.jsx",

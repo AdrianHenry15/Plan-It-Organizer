@@ -1,4 +1,12 @@
+
 #root {
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
     background-image: url(./assets/pixilart.png);
     min-height: 100%;
     height: 100%;
@@ -52,6 +60,15 @@ html, body {
 
 .mobile-btn:hover {
     font-size: 4em;
+}
+
+.homepage-folders {
+    font-size: 3.75em;
+}
+
+.homepage-folders:hover {
+    font-size: 4.25em;
+    transition: all 300ms ease;
 }
 
 
