@@ -1,6 +1,6 @@
 const { User, Aspiration, Folder } = require('../models')
 const { AuthenticationError } = require('apollo-server-express')
-const { signToken } = require('../utils/auth')
+const { signToken } = require('../utils/auth.js')
 
 const resolvers = {
     Query: {

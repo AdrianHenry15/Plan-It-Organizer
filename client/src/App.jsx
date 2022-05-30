@@ -8,6 +8,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
+
 // pages
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -25,8 +26,11 @@ import CalendarApp from './components/Calendar/Calendar';
 
 import AuthService from './utils/auth';
 
+
+import pixilart from './assets/pixilart.png'
+
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
