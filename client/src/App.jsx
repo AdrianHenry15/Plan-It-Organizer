@@ -24,10 +24,9 @@ import GetStarted from './components/GetStarted';
 import HamburgerMenu from './components/HamburgerMenu';
 import CalendarApp from './components/Calendar/Calendar';
 
+import './App.css'
+
 import AuthService from './utils/auth';
-
-
-import pixilart from './assets/pixilart.png'
 
 const httpLink = createHttpLink({
   uri: "graphql",
