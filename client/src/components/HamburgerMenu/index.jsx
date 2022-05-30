@@ -17,11 +17,15 @@ const HamburgerMenu = () => {
           <a href="/" onClick={logout}>
             Logout
           </a>
+          <Link to="/" className="sm:hidden md:block text-black">Home</Link>
+          <Link to="/calendar" className="sm:hidden md:block text-black">Calandar</Link>
         </Menu>
       ) : (
         <Menu>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
+          <Link to="/login" className="text-black">Login</Link>
+          <Link to="/signup" className="text-black">Signup</Link>
+          <Link to="/" className="sm:hidden md:block text-black">Home</Link>
+          <Link to="/calendar" className="sm:hidden md:block text-black">Calendar</Link>
         </Menu>
       )}
     </>
