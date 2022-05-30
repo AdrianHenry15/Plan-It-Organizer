@@ -7,7 +7,6 @@ const folderSchema = new Schema(
             type: String,
             trim: true,
             required: true,
-            unique: true
         },
         username: {
             type: String
