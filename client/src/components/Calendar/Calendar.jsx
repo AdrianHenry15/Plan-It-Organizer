@@ -1,6 +1,5 @@
 // packages
 import 'react-calendar/dist/Calendar.css';
-// import Calendar from 'react-calendar/dist/entry.nostyle';
 import Calendar from 'react-calendar';
 
 // Local Dev

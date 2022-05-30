@@ -37,7 +37,7 @@ const Login = () => {
       <div className='flex h-screen justify-center items-center'>
         <div className='bg-gradient-to-b from-wine-400 to-bubblegum-500 rounded-lg mx-28 w-80 py-2'>
         <a className='mx-auto' href="/signup">
-              <button className=' mb-4 hover:bg-bubblegum-500 transition-all duration-300 mx-auto p-2 mx-2 rounded-md' type='submit'>
+              <button className=' mb-4 hover:bg-bubblegum-500 transition-all duration-300 mx-2 p-2 rounded-md' type='submit'>
                 Signup
               </button>
               </a>
