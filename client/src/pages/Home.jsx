@@ -34,6 +34,7 @@ const Home = ({ setFolderId }) => {
             </Link>
           ))}
         </div>
+        
               <FolderForm />
             </div>
           )}
