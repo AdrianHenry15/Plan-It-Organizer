@@ -8,6 +8,9 @@ const aspirationSchema = new Schema(
             trim: true,
             required: true
         },
+        username: {
+            type: String
+        },
         description: {
             type: String,
             trim: true,
@@ -66,6 +69,11 @@ const aspirationSchema = new Schema(
         isComplete: {
             type: Boolean,
         }
+    },
+    {
+      toJSON: {
+        getters: true
+      }
     }
 )
 const Aspiration = model('Aspiration', aspirationSchema);
