@@ -122,7 +122,7 @@ const CreateAspiration = ({ folderId }) => {
               {/* fix the words */}
               <label for="img"className='cursor-pointer bg-rich-300 hover:bg-rich-200 rounded-md p-1 ease-in-out duration-300 transition-all hover:text-cream-300 mx-auto my-1 rounded-sm px-1 text-white'>Choose an image</label>
               <input id="img" name="img" type="file" className='hidden' />
-              <button type="submit" className='text-sky-50 my-6 bg-rose-300 hover:bg-bubblegum-400 transition-all duration-300 mx-auto p-1 rounded-md' type='submit'>
+              <button type="submit" className="text-sky-50 my-6 bg-rose-300 hover:bg-bubblegum-400 transition-all duration-300 mx-auto p-1 rounded-md">
                 Submit
               </button>
               {/* {error && <div>Login failed</div>} */}
