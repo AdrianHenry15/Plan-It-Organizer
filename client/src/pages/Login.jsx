@@ -35,17 +35,12 @@ const Login = () => {
   return (
     <div className=''>
       <div className='flex h-screen justify-center items-center'>
-        <div className='bg-gradient-to-b from-wine-400 to-bubblegum-500 rounded-lg mx-28 w-80 py-2'>
-        <a className='mx-auto' href="/signup">
-              <button className=' mb-4 hover:bg-bubblegum-500 transition-all duration-300 mx-auto p-2 mx-2 rounded-md' type='submit'>
-                Signup
-              </button>
-              </a>
+        <div className='bg-gradient-to-b from-rich-500 to-wine-500 rounded-lg mx-28 w-60 py-2'>
           <h4 className='text-center text-xl my-6'>Login</h4>
           <div className=''>
             <form className='text-slate-900 flex flex-col' onSubmit={handleFormSubmit}>
               <input
-                className='w-50 my-1 mx-auto align-middle rounded-sm px-1'
+                className='w-32 my-1 mx-auto align-middle rounded-sm px-1'
                 placeholder='Your email'
                 name='email'
                 type='email'
@@ -54,7 +49,7 @@ const Login = () => {
                 onChange={handleChange}
               />
               <input
-                className='w-50 mx-auto my-1 rounded-sm px-1'
+                className='w-32 mx-auto my-1 rounded-sm px-1'
                 placeholder='******'
                 name='password'
                 type='password'
@@ -62,10 +57,10 @@ const Login = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='text-sky-50 my-6 bg-wine-300 hover:bg-bubblegum-400 transition-all duration-300 mx-auto p-2 rounded-md' type='submit'>
+              <button className='text-sky-50 my-6 bg-rose-300 hover:bg-bubblegum-400 transition-all duration-300 mx-auto p-1 rounded-md' type='submit'>
                 Submit
               </button>
-              {error && <div className='mx-auto'>Login failed</div>}
+              {error && <div>Login failed</div>}
             </form>
           </div>
         </div>

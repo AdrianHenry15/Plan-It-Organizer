@@ -1,8 +1,6 @@
 # Plan It Organizer
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://mit-license.org/)
-
-[Link]() to Deployed Application
+[Link](https://plan-it-organizer.herokuapp.com/) to Deployed Application
 
 # Description:
 
