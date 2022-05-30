@@ -8,6 +8,9 @@ const aspirationSchema = new Schema(
             trim: true,
             required: true
         },
+        username: {
+            type: String
+        },
         description: {
             type: String,
             trim: true,
