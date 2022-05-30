@@ -26,9 +26,6 @@ import CalendarApp from './components/Calendar/Calendar';
 
 import AuthService from './utils/auth';
 
-
-import pixilart from './assets/pixilart.png'
-
 const httpLink = createHttpLink({
   uri: "graphql",
 });
