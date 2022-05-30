@@ -1,10 +1,6 @@
-import React from 'react'
+import React from 'react';
 
 const SinglePlan = () => {
-
-  const formSubmit = () => {
-    console.log("success")
-  };
 
   return (
     <div className=''>
@@ -22,7 +18,7 @@ const SinglePlan = () => {
                 
               />
               
-              <input
+              <textarea
               // change the size
                 className='w-32 mx-auto my-1 rounded-sm px-1'
                 placeholder='Add a description'
@@ -86,7 +82,7 @@ const SinglePlan = () => {
                 <option value="japanese">Japanese</option>
                 <option value="vietnamese">Vietnamese</option>
                 <option value="korean">Korean</option>
-                <option value="africian">Africian</option>
+                <option value="african">African</option>
                 <option value="other">Other</option>
               </select>
               {/* fix the words */}

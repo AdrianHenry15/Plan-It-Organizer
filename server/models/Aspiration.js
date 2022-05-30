@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateformat')
+const dateFormat = require('../utils/dateFormat')
 
 const aspirationSchema = new Schema(
     {
@@ -13,7 +13,7 @@ const aspirationSchema = new Schema(
             trim: true,
             required: true
         },
-        categories: {
+        category: {
             type: String,
             trim: true,
             required: true
@@ -65,7 +65,7 @@ const aspirationSchema = new Schema(
         },
         isComplete: {
             type: Boolean,
-        },
+        }
     }
 )
 const Aspiration = model('Aspiration', aspirationSchema);
