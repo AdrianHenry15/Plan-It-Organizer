@@ -31,7 +31,14 @@ const resolvers = {
         },
         // get single folder
         folder: async (parent, { _id }) => {
-            return Folder.findOne({ _id });
+            await Folder.findOne({ _id: _id }).then(data => 
+                {
+                [...data.aspirations].forEach(element => {
+                    Aspiration.findById(element).then(res => res);
+                });
+            }
+            // console.log(data)
+            );
         },
         // get all users
         users: async () => {
@@ -75,26 +82,59 @@ const resolvers = {
 
         addAspiration: async (parent, args, context) => {
             // if user logged in
-
             if (context.user) {
-                const aspiration = await Aspiration.create({ ...args, username: context.user.username });
-                // push into folder aspirations array
-                await Folder.findByIdAndUpdate(
-                    { _id: args.folderId },
-                    { $push: { aspirations: aspiration._id } },
-                    { new: true }
-                )
-                return aspiration;
+                const aspiration = Aspiration.create({
+                    title: args.title,
+                    description: args.description,
+                    category: args.category,
+                    createdAt: args.createdAt,
+                    date: args.date,
+                    img: args.img,
+                    priority: args.priority,
+                    genre: args.genre,
+                    focusPoint: args.focusPoint,
+                    diet: args.diet,
+                    culture: args.culture,
+                    whatArticle: args.whatArticle
+                });
+
+                return aspiration.then(async data => {
+                    await Folder.findByIdAndUpdate(args.folderId,
+                        { $push: { aspirations: data._id } },
+                    )
+                    // output
+                    Folder.findOne({ _id: args.folderId }).then(data => {
+                        [...data.aspirations].forEach(element => {
+                            Aspiration.findById(element).then(res => res);
+                        })
+                    });
+                });
             }
-            throw new AuthenticationError('You need to be logged in!');
+                throw new AuthenticationError("Not logged in");
         },
 
         removeAspiration: async (parent, { _id, folderId }, context) => {
             if (context.user) {
+                const aspiration = await Aspiration.findById({_id})
+
                 // remove from folder aspirations array
                 const updatedFolder = await Folder.findByIdAndUpdate(
                     { _id: folderId },
-                    { $pull: { aspirations: _id } },
+                    { $pull: { aspirations: {
+                        _id: aspiration._id,
+                        title: aspiration.title,
+                        description: aspiration.description,
+                        category: aspiration.category,
+                        createdAt: aspiration.createdAt,
+                        date: aspiration.date,
+                        img: aspiration.img,
+                        priority: aspiration.priority,
+                        genre: aspiration.genre,
+                        focusPoint: aspiration.focusPoint,
+                        diet: aspiration.diet,
+                        culture: aspiration.culture,
+                        whatArticle: aspiration.whatArticle
+                    } } },
                     { new: true }
                 )
                 // delete the aspiration

@@ -12,7 +12,6 @@ const typeDefs = gql`
 
   type Aspiration {
     _id: ID
-    folderId: ID
     title: String
     description: String
     category: String
@@ -52,7 +51,7 @@ const typeDefs = gql`
     folders(username: String): [Folder]
     folder(_id: ID!): Folder
   }
-  
+
   type Mutation {
     login(email: String!, password: String!): Auth
 
@@ -64,7 +63,15 @@ const typeDefs = gql`
       description: String!
       category: String!
       priority: String!
-    ): Folder
+      date: String
+      img: String
+      genre: String
+      focusPoint: String
+      diet: String
+      culture: String
+      whatArticle: String
+      username: String
+    ): Aspiration
 
     removeAspiration(_id: ID!, folderId: ID!): Folder
 
