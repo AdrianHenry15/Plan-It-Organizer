@@ -11,11 +11,12 @@ const SingleFolder = ({ folderId, setFolderId }) => {
   const { loading, data } = useQuery(QUERY_FOLDER, {
     variables: { id: folderId },
   });
-  const [output, setOutput] = useState("Loading...");
+  const [output, setOutput] = useState(" ");
 
   useEffect(() => {
     if (loading) {
       return () => {
+        console.log(output)
         return <div>{output}</div>;
       };
     } else if (data) {
