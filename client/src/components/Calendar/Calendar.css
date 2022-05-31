@@ -40,9 +40,7 @@ abbr:where([title]) {
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-* {
-  font-size: xx-large;
-}
+
 
 .react-calendar {
   width: 3000px;
@@ -51,6 +49,7 @@ abbr:where([title]) {
   font-weight: 500;
   line-height: 2em;
   background-color: #1814425d;
+  font-size: xx-large;
 }
 .react-calendar--doubleView {
   width: 700px;
@@ -121,9 +120,9 @@ abbr:where([title]) {
   font-size: 0.75em;
   font-weight: bold;
 }
-.react-calendar__month-view__days__day--weekend {
-  /* color: #d10000; */
-}
+/* .react-calendar__month-view__days__day--weekend {
+  color: #d10000;
+} */
 .react-calendar__month-view__days__day--neighboringMonth {
   color: #757575;
 }
