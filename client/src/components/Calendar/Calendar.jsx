@@ -9,7 +9,7 @@ const CalendarApp = () => {
   const [modal, setModal] = useState([])
 
   return (
-    <div className={`m-auto`}>
+    <div className={`m-auto `}>
         <Calendar 
         onChange={onChange} 
         formatLongDate={setModal}
