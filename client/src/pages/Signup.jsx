@@ -36,19 +36,9 @@ const Signup = () => {
   return (
     <main className=''>
       <div className='flex h-screen justify-center items-center'>
-<<<<<<< HEAD
-        <div className='bg-gradient-to-b from-bubblegum-500 to-wine-400 rounded-lg mx-28 w-80 py-2'>
-        <a className='mx-auto' href="/login">
-              <button className=' mb-4 hover:bg-wine-400 transition-all duration-300 mx-2 p-2 rounded-md' type='submit'>
-                Login
-              </button>
-              </a>
-          <h4 className='text-center my-6 text-xl'>Sign Up</h4>
-=======
         <div className='bg-gradient-to-b from-bubblegum-400 to-cream-400 rounded-lg mx-28 w-80 py-2 '>
        
           <h4 className='text-center text-black text-2xl my-6'>Sign Up</h4>
->>>>>>> 4d94d76b79c53d0b0942e83c4197c1c7f41456b9
           <div className=''>
             <form className='text-slate-900 flex flex-col' onSubmit={handleFormSubmit}>
               <input
