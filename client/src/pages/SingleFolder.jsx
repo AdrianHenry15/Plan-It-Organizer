@@ -13,6 +13,8 @@ const SingleFolder = ({ folderId, setFolderId }) => {
   });
   const [output, setOutput] = useState("Loading...");
 
+  console.log(data, folderId,);
+
   useEffect(() => {
     if (loading) {
       return () => {
@@ -27,13 +29,12 @@ const SingleFolder = ({ folderId, setFolderId }) => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            
               <div className="grid grid-cols-3 gap-4 mt-8">
                 {aspirations.map((aspiration, index) => (
                   <Link
                     to={`/folder/${aspiration._id}`}
                     key={index}
-                    // onClick={() => setFolderId(folder._id)}
+                    onClick={() => setFolderId(aspiration.folderId)}
                   >
                     {/* <FolderTwoTone className="homepage-folders" /> */}
                     <div className="text-center text-lg">{aspiration._id}</div>
