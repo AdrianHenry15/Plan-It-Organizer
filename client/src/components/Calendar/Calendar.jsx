@@ -10,7 +10,7 @@ const CalendarApp = () => {
   const [value, onChange] = useState(new Date());
 
   return (
-    <div className={`m-auto`}>
+    <div className={`m-auto `}>
         <Calendar 
         onChange={onChange} 
         
