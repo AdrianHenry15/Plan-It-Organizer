@@ -24,10 +24,9 @@ import GetStarted from './components/GetStarted';
 import HamburgerMenu from './components/HamburgerMenu';
 import CalendarApp from './components/Calendar/Calendar';
 
+import './App.css'
+
 import AuthService from './utils/auth';
-
-
-import pixilart from './assets/pixilart.png'
 
 const httpLink = createHttpLink({
   uri: "graphql",
@@ -63,7 +62,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/folder/:name" element={<SingleFolder folderId={folderId} setFolderId={setFolderId} />} />
               <Route path="/aspirations" element={<Aspirations/>} />
-              <Route path="/aspire" element={<CreateAspiration/>} />
+              <Route path="/aspire" element={<CreateAspiration folderId={folderId} />} />
               <Route path="/calendar" element={<CalendarApp />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>

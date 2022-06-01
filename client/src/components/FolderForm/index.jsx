@@ -4,8 +4,11 @@ import { ADD_FOLDER } from "../../utils/mutations";
 import { QUERY_FOLDERS, QUERY_ME } from "../../utils/queries";
 import { FolderAddTwoTone } from "@ant-design/icons";
 
+
 const FolderForm = () => {
+  // state and mutations
   const [folderText, setText] = useState("");
+
   const [addFolder, { error }] = useMutation(ADD_FOLDER, {
     update(cache, { data: { addFolder } }) {
       try {
@@ -42,14 +45,14 @@ const FolderForm = () => {
 
   return (
     <div>
-      <form className="flex flex-col" onSubmit={handleFormSubmit}>
-        <button type="submit" className="homepage-folders">
+      <form className="flex flex-col " onSubmit={handleFormSubmit}>
+        <button type="submit" className="homepage-folders my-4 ">
           <FolderAddTwoTone />
         </button>
         <input
           type="text"
           placeholder="folder name"
-          className="text-slate-900 mx-1"
+          className="text-slate-900 mx-auto mb-6 w-60 py-1 "
           onChange={handleChange}
         />
       </form>
