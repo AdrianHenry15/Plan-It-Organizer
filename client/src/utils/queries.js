@@ -21,8 +21,10 @@ export const QUERY_FOLDER = gql`
     folder(_id: $id) {
       _id
       title
+      createdAt
       aspirations {
         _id
+        folderId
         title
         description
         category
@@ -33,8 +35,9 @@ export const QUERY_FOLDER = gql`
         genre
         focusPoint
         diet
-        region
+        culture
         whatArticle
+        username
       }
     }
   }

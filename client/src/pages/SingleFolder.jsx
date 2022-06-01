@@ -13,6 +13,8 @@ const SingleFolder = ({ folderId, setFolderId }) => {
   });
   const [output, setOutput] = useState(" ");
 
+  console.log(data, folderId,);
+
   useEffect(() => {
     if (loading) {
       return () => {
@@ -26,15 +28,20 @@ const SingleFolder = ({ folderId, setFolderId }) => {
       let aspirationReturn = (
         <div>
           {loading ? (
-            <div>Loading...</div>
+            <div> 
+              <Link to="./CreateAspiration">
+              <button className='text-sky-50  mb-2 mt-1 bg-rose-300 hover:bg-bubblegum-400 transition-all duration-300 mx-auto p-1 rounded-md' type='submit'>
+                Create Aspiration 
+              </button>
+              </Link>
+            </div>
           ) : (
-            
               <div className="grid grid-cols-3 gap-4 mt-8">
                 {aspirations.map((aspiration, index) => (
                   <Link
                     to={`/folder/${aspiration._id}`}
                     key={index}
-                    // onClick={() => setFolderId(folder._id)}
+                    onClick={() => setFolderId(aspiration.folderId)}
                   >
                     {/* <FolderTwoTone className="homepage-folders" /> */}
                     <div className="text-center text-lg">{aspiration._id}</div>
