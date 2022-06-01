@@ -76,7 +76,7 @@ html, body {
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-    position: fixed;
+    position:fixed;
     width: 36px;
     height: 30px;
     right: 1em;
@@ -87,6 +87,7 @@ html, body {
   .bm-burger-bars {
     background: #fff;
     transition: all 500ms ease;
+    position:-ms-page !important;
   }
   
   /* Color/shape of burger icon bars on */
@@ -332,7 +333,7 @@ html, body {
 
 
 
-  
+
 
   /* calendar css */
 
