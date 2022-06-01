@@ -1,7 +1,6 @@
 import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
-import "./index.css";
 import AuthService from "../../utils/auth";
 
 const HamburgerMenu = () => {
