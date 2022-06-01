@@ -1,5 +1,4 @@
 import React from "react";
-import "../pages/noMatch.css";
 
 const NoMatch = () => {
   return (
