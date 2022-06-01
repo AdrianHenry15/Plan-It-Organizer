@@ -5,13 +5,13 @@ import { QUERY_ME } from "../utils/queries";
 import FolderForm from "../components/FolderForm";
 import { FolderTwoTone } from "@ant-design/icons";
 import { useMutation } from "@apollo/client";
-import { REMOVE_FOLDER } from '../utils/mutations';
+import { REMOVE_FOLDER } from "../utils/mutations";
 
 const Home = ({ folderId, setFolderId }) => {
   const { loading, data } = useQuery(QUERY_ME);
   const [output, setOutput] = useState("Loading...");
-  
-  const [removeFolder, {err}] = useMutation(REMOVE_FOLDER, {
+
+  const [removeFolder, { err }] = useMutation(REMOVE_FOLDER, {
     update(cache, { data: { removeFolder } }) {
       try {
         const { me } = cache.readQuery({ query: QUERY_ME });
@@ -30,10 +30,10 @@ const Home = ({ folderId, setFolderId }) => {
     // console.log(id)
     setFolderId(id);
     console.log(folderId);
-  }
+  };
 
-   // functions and handlers go here:
-   const handleRemoveFolder = async (event) => {
+  // functions and handlers go here:
+  const handleRemoveFolder = async (event) => {
     event.preventDefault();
     console.log(folderId);
     try {
@@ -43,10 +43,9 @@ const Home = ({ folderId, setFolderId }) => {
     } catch (e) {
       console.error(e);
     }
-  }
- 
+  };
 
- // end of delete folder handlers by Adrian
+  // end of delete folder handlers by Adrian
 
   useEffect(() => {
     if (loading) {
@@ -62,36 +61,49 @@ const Home = ({ folderId, setFolderId }) => {
           ) : (
             <div>
               <div>
-              <FolderForm/>
-              <div className="grid md:grid-cols-3 grid-cols-2 content-around m-4">
-                {folders.map((folder, index) => (
-                  <div key={index} className="relative">
-                  <Link
-                    to={`/folder/${folder.title}`}
-                    onClick={() => setFolderId(folder._id)}
-                  >
-                    
-                    <div className="flex flex-col">
-                      
-                      <FolderTwoTone className="homepage-folders" />
-                      <div className="text-center text-lg">{folder.title}</div>
+                <FolderForm />
+                <div className="grid md:grid-cols-3 grid-cols-2 content-around m-4">
+                  {folders.map((folder, index) => (
+                    <div key={index} className="relative">
+                      <Link
+                        to={`/folder/${folder.title}`}
+                        onClick={() => setFolderId(folder._id)}
+                      >
+                        <div className="flex flex-col">
+                          <FolderTwoTone className="homepage-folders" />
+                          <div className="text-center text-lg">
+                            {folder.title}
+                          </div>
+                        </div>
+                      </Link>
+                      <div key={`dots-${index}`} className="dots-position">
+                        <div className="dropdown">
+                          <button
+                            onMouseOver={() => {
+                              setFolderId(folder._id);
+                              console.log(folderId);
+                            }}
+                            className="dropbtn text-3xl"
+                          >
+                            ...
+                          </button>
+                          <ul className="dropdown-content">
+                            <li className="cursor-pointer text-rich-500">
+                              Update
+                            </li>
+                            <li
+                              className="cursor-pointer text-rose-400"
+                              onClick={handleRemoveFolder}
+                            >
+                              Delete
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                    
-                  </Link>
-                  <div key={`dots-${index}`} className="dots-position">
-                    <div className="dropdown">
-                      <button onMouseOver={() => {setFolderId(folder._id); console.log(folderId)}} className="dropbtn text-3xl">...</button>
-                      <ul className="dropdown-content">
-                        <li className="cursor-pointer text-rich-500">Update</li>
-                        <li className="cursor-pointer text-rose-400" onClick={handleRemoveFolder}>Delete</li>
-                      </ul>
-                    </div>
-                  </div>
-                  </div>
-                ))}
+                  ))}
                 </div>
               </div>
-
             </div>
           )}
         </div>

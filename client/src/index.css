@@ -108,3 +108,15 @@ html, body {
       top: 0;
       left: 30%;
   }
+
+  @media (max-width: 900px) {
+    .dots-position {
+        left: 25%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .dots-position {
+        left: 20%;
+    }
+  }
