@@ -22,7 +22,6 @@ const SingleFolder = ({ folderId, setFolderId }) => {
   useEffect(() => {
     if (loading) {
       return () => {
-        console.log(output)
         return <div>{output}</div>;
       };
     } else if (data) {
