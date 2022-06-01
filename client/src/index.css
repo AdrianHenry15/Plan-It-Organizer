@@ -87,7 +87,7 @@ html, body {
   .bm-burger-bars {
     background: #fff;
     transition: all 500ms ease;
-    /* position: absolute !important; */
+    position: none !important;
   }
   
   /* Color/shape of burger icon bars on */
@@ -118,10 +118,8 @@ html, body {
   
   /* General sidebar styles */
   .bm-menu {
-    /* background: #373a47; */
     background: linear-gradient(to bottom, #da93a5, #faded2);
     background-size: cover;
-    /* opacity: 0.7; */
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
   }
