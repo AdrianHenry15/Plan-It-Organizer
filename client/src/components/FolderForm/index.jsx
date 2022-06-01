@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_FOLDER, REMOVE_FOLDER } from "../../utils/mutations";
+import { ADD_FOLDER } from "../../utils/mutations";
 import { QUERY_FOLDERS, QUERY_ME } from "../../utils/queries";
 import { FolderAddTwoTone } from "@ant-design/icons";
-import Auth from '../../utils/auth';
+
 
 const FolderForm = () => {
   // state and mutations
   const [folderText, setText] = useState("");
-  const [removeFolder, {err}] = useMutation(REMOVE_FOLDER);
 
   const [addFolder, { error }] = useMutation(ADD_FOLDER, {
     update(cache, { data: { addFolder } }) {
@@ -24,42 +23,6 @@ const FolderForm = () => {
       }
     },
   });
-
-  // functions and handlers
-  const removeFolderId = (folderId) => {
-    const savedFolderIds = localStorage.getItem('saved_folders')
-      ? JSON.parse(localStorage.getItem('saved_folders'))
-      : null;
-  
-    if (!savedFolderIds) {
-      return false;
-    }
-  
-    const updatedSavedFolderIds = savedFolderIds?.filter((savedFolderId) => savedFolderId !== folderId);
-    localStorage.setItem('saved_folders', JSON.stringify(updatedSavedFolderIds));
-  
-    return true;
-  };
-  const handleDeleteFolder = async (folderId) => {
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-    if (!token) {
-      return false;
-    }
-
-    try {
-      // eslint-disable-next-line
-      const { data } = await removeFolder({
-        variables: { folderId },
-      });
-
-      removeFolderId(folderId);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  // end of delete folder handlers by Adrian
 
   const handleChange = (event) => {
     if (event.target.value.length <= 280) {

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 // import { useParams } from 'react-router-dom';
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_FOLDER } from "../utils/queries";
+import { REMOVE_FOLDER } from "../utils/mutations";
 import { Link } from "react-router-dom";
+import Auth from '../utils/auth';
 
 const SingleFolder = ({ folderId, setFolderId }) => {
   // const { id: folderName } = useParams();
@@ -12,8 +14,45 @@ const SingleFolder = ({ folderId, setFolderId }) => {
     variables: { id: folderId },
   });
   const [output, setOutput] = useState(" ");
+  const [removeFolder, {err}] = useMutation(REMOVE_FOLDER);
 
   console.log(data, folderId,);
+
+   // functions and handlers
+   const removeFolderId = (folderId) => {
+    const savedFolderIds = localStorage.getItem('saved_folders')
+      ? JSON.parse(localStorage.getItem('saved_folders'))
+      : null;
+  
+    if (!savedFolderIds) {
+      return false;
+    }
+  
+    const updatedSavedFolderIds = savedFolderIds?.filter((savedFolderId) => savedFolderId !== folderId);
+    localStorage.setItem('saved_folders', JSON.stringify(updatedSavedFolderIds));
+  
+    return true;
+  };
+  const handleDeleteFolder = async (folderId) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      // eslint-disable-next-line
+      const { data } = await removeFolder({
+        variables: { folderId },
+      });
+
+      removeFolderId(folderId);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // end of delete folder handlers by Adrian
 
   useEffect(() => {
     if (loading) {

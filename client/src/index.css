@@ -60,3 +60,7 @@ html, body {
 .homepage-folders:hover {
     font-size: 6.5em;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
