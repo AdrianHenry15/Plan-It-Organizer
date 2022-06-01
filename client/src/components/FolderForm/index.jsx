@@ -4,8 +4,11 @@ import { ADD_FOLDER } from "../../utils/mutations";
 import { QUERY_FOLDERS, QUERY_ME } from "../../utils/queries";
 import { FolderAddTwoTone } from "@ant-design/icons";
 
+
 const FolderForm = () => {
+  // state and mutations
   const [folderText, setText] = useState("");
+
   const [addFolder, { error }] = useMutation(ADD_FOLDER, {
     update(cache, { data: { addFolder } }) {
       try {

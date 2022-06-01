@@ -23,7 +23,7 @@ const typeDefs = gql`
     genre: String
     focusPoint: String
     diet: String
-    region: String
+    culture: String
     whatArticle: String
     username: String
   }
@@ -68,20 +68,7 @@ const typeDefs = gql`
 
     removeAspiration(_id: ID!, folderId: ID!): Folder
 
-    updateAspiration(
-      _id: ID!
-      title: String
-      description: String
-      category: String
-      date: String
-      img: String
-      priority: String
-      genre: String
-      focusPoint: String
-      diet: String
-      region: String
-      whatArticle: String
-    ): Aspiration
+    updateAspiration(_id: ID!): Aspiration
 
     addFolder(title: String!): Folder
 

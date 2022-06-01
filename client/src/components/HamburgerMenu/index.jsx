@@ -18,7 +18,7 @@ const HamburgerMenu = () => {
             Logout
           </a>
           <Link to="/" className="sm:hidden md:block text-black">Home</Link>
-          <Link to="/calendar" className="sm:hidden md:block text-black">Calandar</Link>
+          <Link to="/calendar" className="sm:hidden md:block text-black">Calendar</Link>
         </Menu>
       ) : (
         <Menu>
