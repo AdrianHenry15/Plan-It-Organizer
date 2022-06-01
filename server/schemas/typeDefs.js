@@ -12,6 +12,7 @@ const typeDefs = gql`
 
   type Aspiration {
     _id: ID
+    folderId: String
     title: String
     description: String
     category: String

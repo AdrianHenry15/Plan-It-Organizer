@@ -51,6 +51,7 @@ const FolderForm = () => {
           placeholder="folder name"
           className="text-slate-900 mx-1"
           onChange={handleChange}
+          id="folder-name"
         />
       </form>
     </div>

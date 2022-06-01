@@ -8,6 +8,8 @@ import { Link, useLocation } from "react-router-dom";
 
 import { setTwoToneColor } from '@ant-design/icons';
 
+import AuthService from '../../utils/auth';
+
 setTwoToneColor('#D1788F');
 
 const Nav = () => {
@@ -19,7 +21,7 @@ const Nav = () => {
           <HomeTwoTone className="mobile-btn" style={{color: '#fdf7f3'}}/>
         </Link>
       </div>
-      <Link className="mx-auto" to={location.pathname.includes('/folder') ? '/aspire' : '/'} >
+      <Link className="mx-auto" to={location.pathname.includes('/folder') ? '/aspire' : location.pathname === '/' && AuthService.loggedIn() ? '/#folder' : '/login'} >
         <div className="bg-cream-100 hover:bg-cream-200 transition-all ease-in-out duration-300 rounded-full cursor-pointer new-aspiration-btn">
           <FontAwesomeIcon
             className="new-aspiration text-bubblegum-500"
