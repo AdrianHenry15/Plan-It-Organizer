@@ -62,7 +62,14 @@ html, body {
 }
 
 
+
+
+
+
+
 /*hambuger css */
+
+
 
 
 
@@ -140,3 +147,339 @@ html, body {
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
   }
+
+
+
+
+
+  /* 404 page css */
+
+
+
+
+
+
+  .fourohfour{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background: radial-gradient(circle, #240015 0%, #12000b 100%);
+    overflow: hidden;
+  }
+  
+  .wrap{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .fourohfour-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 150px;
+    font-size: 32px;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    display: block;
+    color: #ffffff;
+    font-weight: 300;
+    font-family: Audiowide;
+    text-shadow: 0px 0px 4px #12000a;
+    animation: fadeInText 3s ease-in 3.5s forwards, flicker4 5s linear 7.5s infinite, hueRotate 6s ease-in-out 3s infinite;
+  }
+  
+  #svgWrap_1,
+  #svgWrap_2{
+    position: absolute;
+    height: auto;
+    width: 600px;
+    max-width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #svgWrap_1,
+  #svgWrap_2,
+  .fourohfour{
+    animation: hueRotate 6s ease-in-out 3s infinite;
+  }
+  
+  #id1_1,
+  #id2_1,
+  #id3_1{
+    stroke: #ff005d;
+    stroke-width: 3px;
+    fill: transparent;
+    filter: url(#glow);
+  }
+  
+  #id1_2,
+  #id2_2,
+  #id3_2{
+    stroke: #12000a;
+    stroke-width: 3px;
+    fill: transparent;
+    filter: url(#glow);
+  }
+  
+  #id3_1{
+    stroke-dasharray: 940px;
+    stroke-dashoffset: -940px;
+    animation: drawLine3 2.5s ease-in-out 0s forwards, flicker3 4s linear 4s infinite;
+  }
+  
+  #id2_1{
+    stroke-dasharray: 735px;
+    stroke-dashoffset: -735px;
+    animation: drawLine2 2.5s ease-in-out 0.5s forwards, flicker2 4s linear 4.5s infinite;
+  }
+  
+  #id1_1{
+    stroke-dasharray: 940px;
+    stroke-dashoffset: -940px;
+    animation: drawLine1 2.5s ease-in-out 1s forwards, flicker1 4s linear 5s infinite;
+  }
+  
+  @keyframes drawLine1 {
+    0%  {stroke-dashoffset: -940px;}
+    100%{stroke-dashoffset: 0px;}
+  }
+  
+  @keyframes drawLine2 {
+    0%  {stroke-dashoffset: -735px;}
+    100%{stroke-dashoffset: 0px;}
+  }
+  
+  @keyframes drawLine3 {
+    
+    0%  {stroke-dashoffset: -940px;}
+    100%{stroke-dashoffset: 0px;}
+  }
+  
+  @keyframes flicker1{
+    0%  {stroke: #ff005d;}
+    1%  {stroke: transparent;}
+    3%  {stroke: transparent;}
+    4%  {stroke: #ff005d;}
+    6%  {stroke: #ff005d;}
+    7%  {stroke: transparent;}
+    13% {stroke: transparent;}
+    14% {stroke: #ff005d;}
+    100%{stroke: #ff005d;}
+  }
+  
+  @keyframes flicker2{
+    0%  {stroke: #ff005d;}
+    50% {stroke: #ff005d;}
+    51% {stroke: transparent;}
+    61% {stroke: transparent;}
+    62% {stroke: #ff005d;}
+    100%{stroke: #ff005d;}
+  }
+  
+  @keyframes flicker3{
+    0%  {stroke: #ff005d;}
+    1%  {stroke: transparent;}
+    10% {stroke: transparent;}
+    11% {stroke: #ff005d;}
+    40% {stroke: #ff005d;}
+    41% {stroke: transparent;}
+    45% {stroke: transparent;}
+    46% {stroke: #ff005d;}
+    100%{stroke: #ff005d;}
+  }
+  
+  @keyframes flicker4{
+    0%  {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+    30% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+    31% {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+    32% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+    36% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+    37% {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+    41% {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+    42% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+    85% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+    86% {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+    95% {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+    96% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+    100%{color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+  }
+  
+  @keyframes fadeInText{
+    1%  {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+    70% {color: #ff005d;text-shadow:0px 0px 14px #ff005d;}
+    100%{color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+  }
+  
+  @keyframes hueRotate{
+    0%  {
+      filter: hue-rotate(0deg);
+    }
+    50%  {
+      filter: hue-rotate(-120deg);
+    }
+    100%  {
+      filter: hue-rotate(0deg);
+    }
+  }
+
+
+
+
+  
+
+  /* calendar css */
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.react-calendar {
+  width: 3000px;
+  max-width: 100%;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 500;
+  line-height: 2em;
+  background-color: #18144279;
+  font-size: xx-large;
+}
+.react-calendar--doubleView {
+  width: 700px;
+}
+.react-calendar--doubleView .react-calendar__viewContainer {
+  display: flex;
+  margin: -0.5em;
+}
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+  width: 50%;
+  margin: 0.5em;
+}
+
+abbr:where([title]) {
+  text-decoration: none !important;
+}
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    /* background: #185adb; */
+    transition: all 0.25s ease;
+}
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+  background-color: rgba(170, 96, 127, 0.548);
+}
+.react-calendar__navigation {
+  display: flex;
+  /* height: 44px; */
+  margin-bottom: 1em;
+}
+.react-calendar__navigation button {
+  min-width: 200px;
+  background: none;
+}
+.react-calendar__navigation button:disabled {
+  background-color: #f0f0f0;
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: rgba(170, 96, 127, 0.548);
+}
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75em;
+}
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5em;
+}
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+/* .react-calendar__month-view__days__day--weekend {
+  color: #d10000;
+} */
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+}
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  padding: 2em 0.5em;
+}
+.react-calendar__tile {
+  margin: 20px 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 30px 25px !important;
+    border-radius: 15px;
+    border: none;
+    /* background: #185adb; */
+    transition: all 0.25s ease;
+}
+.react-calendar__tile:disabled {
+  background-color: #f0f0f0;
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #e6e6e6;
+}
+.react-calendar__tile--now {
+  background: rgb(170, 96, 127);
+}
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #ffffa9;
+}
+.react-calendar__tile--hasActive {
+  background: #76baff;
+}
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #a9d4ff;
+}
+.react-calendar__tile--active {
+  /* background: #006edc; */
+  color: rgb(68, 0, 255);
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #14113fb4;
+}
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #e6e6e6;
+}
+
+
+
+
+
+
