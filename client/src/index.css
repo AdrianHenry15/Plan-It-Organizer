@@ -61,6 +61,3 @@ html, body {
     font-size: 6.5em;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

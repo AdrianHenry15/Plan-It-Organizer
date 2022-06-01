@@ -15,6 +15,7 @@ const CreateAspiration = ({ folderId }) => {
     culture: ''
    });
 
+   // eslint-disable-next-line no-unused-vars
    const [addAspiration, { error }] = useMutation(ADD_ASPIRATION);
 
    const handleChange = (event) => {
