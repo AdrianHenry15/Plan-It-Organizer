@@ -63,7 +63,7 @@ const CreateAspiration = ({ folderId }) => {
               />
               <input
               // npm package for the date
-                className='w-32 mx-auto my-1 rounded-sm px-1'
+                className='w-32 mx-auto my-1 rounded-sm    px-1'
                 placeholder='Date'
                 name='date'
                 type='date'
@@ -132,7 +132,7 @@ const CreateAspiration = ({ folderId }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default CreateAspiration;
