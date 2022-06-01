@@ -52,12 +52,12 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <div className={`flex flex-col h-screen text-sky-50`}>
+      <div className={`flex flex-col h-screen text-sky-50 overflow-y-scroll`}>
         <Router>
           <HamburgerMenu />
           <main className="flex-grow">
             <Routes>
-              <Route path="/" element={AuthService.loggedIn() ? <Home setFolderId={setFolderId} /> : <GetStarted />} />
+              <Route path="/" element={AuthService.loggedIn() ? <Home folderId={folderId} setFolderId={setFolderId} /> : <GetStarted />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/folder/:name" element={<SingleFolder folderId={folderId} setFolderId={setFolderId} />} />
