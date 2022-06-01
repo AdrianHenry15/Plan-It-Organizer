@@ -63,7 +63,7 @@ const typeDefs = gql`
       title: String!
       description: String!
       category: String!
-      priority: String!
+      priority: String
       date: String
       img: String
       genre: String

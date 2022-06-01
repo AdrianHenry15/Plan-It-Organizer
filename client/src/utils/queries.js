@@ -27,7 +27,6 @@ export const QUERY_FOLDER = gql`
     }
   }
 `;
-
 // get all folders
 export const QUERY_FOLDERS = gql`
   query Query($username: String) {

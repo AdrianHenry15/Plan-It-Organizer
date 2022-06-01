@@ -50,7 +50,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <div className={`flex flex-col h-screen text-sky-50`}>
+      <div className={`flex flex-col h-screen text-sky-50 overflow-y-scroll`}>
         <Router>
           <HamburgerMenu />
           <main className="flex-grow">

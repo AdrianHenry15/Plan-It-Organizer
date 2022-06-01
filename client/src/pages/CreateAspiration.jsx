@@ -42,7 +42,7 @@ const CreateAspiration = ({ folderId }) => {
     <div className=''>
       <div className='flex h-screen justify-center items-center'>
         <div className='bg-gradient-to-b from-bubblegum-400 to-cream-400 rounded-lg w-3/5 py-2'>
-          <h4 className='text-center text-black text-2xl my-6'>Create Aspiration</h4>
+          <h4 className='text-center text-black text-2xl my-6'>Aspire</h4>
           <div className=''>
             <form onChange={handleChange} onSubmit={handleFormSubmit} className='text-slate-900 flex flex-col'>
               <input

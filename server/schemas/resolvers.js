@@ -33,36 +33,7 @@ const resolvers = {
     folder: async (parent, { _id }) => {
         console.log(_id)
       const folder = await Folder.findOne({ _id });
-    //   console.log(folder);
         return folder;
-      // let dataArr;
-
-      // .then(async data => {
-      //     dataArr = [...data.aspirations];
-      //     console.log(dataArr)
-      // });
-
-      // const aspirations = await Aspiration.find({
-      //     _id: {
-      //         $in: [ dataArr.forEach(element => ObjectId(element)) ]
-      //     }
-      // });
-      // console.log(aspirations);
-
-      // return dataArr.forEach(async element => {
-      //     await Aspiration.findById(element).then(res => res);
-      // });
-
-      // console.log(folder.schema.obj.aspirations);
-
-      // await Folder.findOne({ _id: _id }).then(data =>
-      //     {
-      //     [...data.aspirations].forEach(element => {
-      //         Aspiration.findById(element).then(res => res);
-      //     });
-      // }
-      // // console.log(data)
-      // );
     },
     // get all users
     users: async () => {
@@ -132,56 +103,6 @@ const resolvers = {
                 },
                 { new: true }
             );
-            // output
-        //     Folder.findOne({ _id: args.folderId }).then((data) => {
-        //       [...data.aspirations].forEach((element) => {
-        //         Aspiration.findById(element).then((res) => res);
-        //       });
-        //     });
-        //   });
-
-        // return aspiration.then(async (data) => {
-        //   console.log(data.genre);
-        //   await Folder.findByIdAndUpdate(
-        //     args.folderId,
-        //     {
-        //       $push: {
-        //         aspirations: {
-        //           title: data.title,
-        //           description: data.description,
-        //           category: data.category,
-        //           createdAt: data.createdAt,
-        //           date: data.date,
-        //           img: data.img,
-        //           priority: data.priority,
-        //           genre: data.genre,
-        //           focusPoint: data.focusPoint,
-        //           diet: data.diet,
-        //           culture: data.culture,
-        //           whatArticle: data.whatArticle,
-        //         },
-        //       },
-        //     }
-        //   );
-        //   // output
-        //   Folder.findOne({ _id: args.folderId }).then((data) => {
-        //     [...data.aspirations].forEach((element) => {
-        //       Aspiration.findById(element).then((res) => res);
-        //     });
-        //   });
-        // });
-
-        // return aspiration.then(async data => {
-        //     await Folder.findByIdAndUpdate(args.folderId,
-        //         { $push: { aspirations: data._id } },
-        //     )
-        //     // output
-        //     Folder.findOne({ _id: args.folderId }).then(data => {
-        //         [...data.aspirations].forEach(element => {
-        //             Aspiration.findById(element).then(res => res);
-        //         })
-        //     });
-        // });
       }
       throw new AuthenticationError("Not logged in");
     },

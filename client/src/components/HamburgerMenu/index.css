@@ -3,7 +3,7 @@
     position: fixed;
     width: 36px;
     height: 30px;
-    right: 1em;
+    right: 2em;
     top: 1.5em;
   }
   
@@ -15,7 +15,7 @@
   
   /* Color/shape of burger icon bars on */
   .bm-burger-bars-hover {
-    background: #fdf7f3;
+    background: #fcefe8;
     opacity: 100% !important;
   }
   
