@@ -9,7 +9,8 @@ import { useMutation } from "@apollo/client";
 const Home = ({ setFolderId }) => {
   const { loading, data } = useQuery(QUERY_ME);
   const [output, setOutput] = useState("Loading...");
-  const [removeFolder, {err}] = useMutation(REMOVE_FOLDER);
+  
+  // const [removeFolder, {err}] = useMutation(REMOVE_FOLDER);
 
    // functions and handlers go here:
    const handleRemoveFolder = () => {
