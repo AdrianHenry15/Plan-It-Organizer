@@ -21,23 +21,8 @@ export const QUERY_FOLDER = gql`
     folder(_id: $id) {
       _id
       title
-      createdAt
       aspirations {
         _id
-        folderId
-        title
-        description
-        category
-        createdAt
-        date
-        img
-        priority
-        genre
-        focusPoint
-        diet
-        culture
-        whatArticle
-        username
       }
     }
   }
