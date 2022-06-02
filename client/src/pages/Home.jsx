@@ -10,6 +10,7 @@ import { REMOVE_FOLDER } from "../utils/mutations";
 const Home = ({ folderId, setFolderId }) => {
   const { loading, data } = useQuery(QUERY_ME);
   const [output, setOutput] = useState("Loading...");
+  let myId;
 
   const [removeFolder, { err }] = useMutation(REMOVE_FOLDER, {
     update(cache, { data: { removeFolder } }) {
@@ -27,15 +28,14 @@ const Home = ({ folderId, setFolderId }) => {
   });
 
   const handleMouseOver = (id) => {
-    setFolderId(id);
-    console.log(id, folderId);
+    myId = id;
   };
 
   const handleRemoveFolder = async (event) => {
     event.preventDefault();
     try {
       await removeFolder({
-        variables: { id: folderId },
+        variables: { id: myId },
       });
     } catch (e) {
       console.error(e);
