@@ -3,7 +3,6 @@ import Calendar from 'react-calendar';
 
 // Local Dev
 import React, { useState } from 'react';
-import './Calendar.css';
 
 const CalendarApp = () => {
   const [value, onChange] = useState(new Date());
