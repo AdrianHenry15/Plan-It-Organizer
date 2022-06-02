@@ -61,25 +61,13 @@ html, body {
     font-size: 6.5em;
 }
 
-
-
-
-
-
-
 /*hambuger css */
-
-
-
-
-
-
 /* Position and sizing of burger button */
 .bm-burger-button {
     position:fixed;
     width: 36px;
     height: 30px;
-    right: 1em;
+    right: 2em;
     top: 1.5em;
   }
   
@@ -124,8 +112,6 @@ html, body {
     font-size: 1.15em;
   }
   
-  
-  
   /* Wrapper for item list */
   .bm-item-list {
     padding: 0.8em;
@@ -147,17 +133,7 @@ html, body {
     background: rgba(0, 0, 0, 0.3);
   }
 
-
-
-
-
   /* 404 page css */
-
-
-
-
-
-
   .fourohfour{
     position: absolute;
     top: 0%;
@@ -328,21 +304,7 @@ html, body {
     }
   }
 
-
-
-
-
-
   /* calendar css */
-
-
-
-
-
-
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .react-calendar {
@@ -384,7 +346,6 @@ abbr:where([title]) {
     cursor: pointer;
     border-radius: 15px;
     border: none;
-    /* background: #185adb; */
     transition: all 0.25s ease;
 }
 .react-calendar button:enabled:hover {
@@ -393,7 +354,6 @@ abbr:where([title]) {
 }
 .react-calendar__navigation {
   display: flex;
-  /* height: 44px; */
   margin-bottom: 1em;
 }
 .react-calendar__navigation button {
@@ -441,7 +401,6 @@ abbr:where([title]) {
     padding: 30px 25px !important;
     border-radius: 15px;
     border: none;
-    /* background: #185adb; */
     transition: all 0.25s ease;
 }
 .react-calendar__tile:disabled {
@@ -477,8 +436,69 @@ abbr:where([title]) {
   background-color: #e6e6e6;
 }
 
+.dropbtn {
+    cursor: pointer;
+    transition: all 300ms ease;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: all 300ms ease
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content li {
+    padding: 12px 16px;
+    display: block;
+    transition: all 300ms ease
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content li:hover {background-color: #f1f1f1}
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    color: #e3adbb;
+  }
+
+  .dots-position {
+      position: absolute;
+      top: 0;
+      left: 30%;
+  }
 
 
+  button {
+    border: none !important;
+  }
 
+  @media (max-width: 900px) {
+    .dots-position {
+        left: 25%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .dots-position {
+        left: 20%;
+    }
+  }
 
 
