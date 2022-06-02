@@ -28,6 +28,10 @@ const UpdateFolder = ({folderId, setFolderId}) => {
         }
       };
 
+      const handleMouseOver = (id) => {
+        setFolderId(id);
+      };
+
       const handleUpdateFolder = async (event) => {
         event.preventDefault();
         console.log(folderId);
