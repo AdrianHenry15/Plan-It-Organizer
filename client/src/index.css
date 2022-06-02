@@ -109,6 +109,11 @@ html, body {
       left: 30%;
   }
 
+
+  button {
+    border: none !important;
+  }
+
   @media (max-width: 900px) {
     .dots-position {
         left: 25%;
@@ -120,3 +125,5 @@ html, body {
         left: 20%;
     }
   }
+
+
