@@ -46,13 +46,13 @@ const FolderForm = () => {
   return (
     <div>
       <form className="flex flex-col " onSubmit={handleFormSubmit}>
-        <button type="submit" className="homepage-folders my-4 ">
+        <button type="submit" className="homepage-folders my-4">
           <FolderAddTwoTone />
         </button>
         <input
           type="text"
           placeholder="folder name"
-          className="text-slate-900 mx-auto mb-6 w-60 py-1 "
+          className="text-slate-900 mx-auto mb-6 w-60 p-1 "
           onChange={handleChange}
         />
       </form>
