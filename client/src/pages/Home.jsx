@@ -11,7 +11,7 @@ import UpdateFolder from "../components/UpdateFolderMethod"
 const Home = ({ folderId, setFolderId }) => {
   const { loading, data } = useQuery(QUERY_ME);
   const [output, setOutput] = useState("Loading...");
-  const [update, setUpdate] = useState(false)
+  let myId;
 
   const [removeFolder, { err }] = useMutation(REMOVE_FOLDER, {
     update(cache, { data: { removeFolder } }) {
@@ -29,26 +29,25 @@ const Home = ({ folderId, setFolderId }) => {
   });
 
   const handleMouseOver = (id) => {
-    setFolderId(id);
+    myId = id;
   };
 
   const handleRemoveFolder = async (event) => {
     event.preventDefault();
-    console.log(folderId);
     try {
       await removeFolder({
-        variables: { id: folderId },
+        variables: { id: myId },
       });
     } catch (e) {
       console.error(e);
     }
   };
 
-  const handleUpdateClick = () => {
+  // const handleUpdateClick = () => {
     
-    setUpdate(true)
+  //   setUpdate(true)
 
-  }
+  // }
 
   useEffect(() => {
     if (loading) {
@@ -65,7 +64,7 @@ const Home = ({ folderId, setFolderId }) => {
             <div>
               <div>
                 <FolderForm />
-                {update && <UpdateFolder folderId={folderId}/>}
+                { <UpdateFolder folderId={folderId}/>}
                 <div className="grid md:grid-cols-3 grid-cols-2 content-around m-4">
                   {folders.map((folder, index) => (
                     <div key={index} className="relative">
@@ -81,20 +80,19 @@ const Home = ({ folderId, setFolderId }) => {
                         </div>
                       </Link>
                       <div key={`dots-${index}`} className="dots-position">
-                        <div className="dropdown">
+                        <div className="dropdown ">
                           <button
                             onMouseOver={() => handleMouseOver(folder._id)}
-                            className="dropbtn text-3xl"
+                            className="dropbtn text-3xl "
                           >
                             ...
                           </button>
                           <ul className="dropdown-content">
-                            <li className="cursor-pointer text-rich-500"
-                            onClick={handleUpdateClick}>
+                            <li className="cursor-pointer text-rich-500 bg-bubblegum-300">
                               Update
                             </li>
                             <li
-                              className="cursor-pointer text-rose-400"
+                              className="cursor-pointer text-rose-400 bg-bubblegum-300"
                               onClick={handleRemoveFolder}
                             >
                               Delete

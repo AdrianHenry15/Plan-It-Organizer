@@ -21,7 +21,6 @@ export const QUERY_FOLDER = gql`
     folder(_id: $id) {
       _id
       title
-      createdAt
       aspirations {
         _id
       }
