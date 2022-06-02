@@ -3,19 +3,23 @@ import React, { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_FOLDER } from "../utils/queries";
 import { REMOVE_FOLDER } from "../utils/mutations";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Auth from '../utils/auth';
 
 const SingleFolder = ({ folderId, setFolderId }) => {
   // const { id: folderName } = useParams();
   // console.log(folderId);
 
+  const location = useLocation();
+
+  const id = location.pathname.split('/').pop();
+
   const { loading, data } = useQuery(QUERY_FOLDER, {
-    variables: { id: folderId },
+    variables: { id: id },
   });
   const [output, setOutput] = useState("Loading...");
 
-  console.log(data, folderId,);
+  console.log(data, id,);
 
   
 

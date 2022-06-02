@@ -66,7 +66,7 @@ const Home = ({ folderId, setFolderId }) => {
                   {folders.map((folder, index) => (
                     <div key={index} className="relative">
                       <Link
-                        to={`/folder/${folder.title}`}
+                        to={`/folder/${folder._id}`}
                         onClick={() => setFolderId(folder._id)}
                       >
                         <div className="flex flex-col">
