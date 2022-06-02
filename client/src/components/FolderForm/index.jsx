@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_FOLDER } from "../../utils/mutations";
-import { QUERY_FOLDERS, QUERY_ME } from "../../utils/queries";
+import { QUERY_ME } from "../../utils/queries";
 import { FolderAddTwoTone } from "@ant-design/icons";
 
 

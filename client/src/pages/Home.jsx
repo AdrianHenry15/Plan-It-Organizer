@@ -6,6 +6,7 @@ import FolderForm from "../components/FolderForm";
 import { FolderTwoTone } from "@ant-design/icons";
 import { useMutation } from "@apollo/client";
 import { REMOVE_FOLDER } from "../utils/mutations";
+import UpdateFolder from "../components/UpdateFolderMethod"
 
 const Home = ({ folderId, setFolderId }) => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -88,7 +89,8 @@ const Home = ({ folderId, setFolderId }) => {
                             ...
                           </button>
                           <ul className="dropdown-content">
-                            <li className="cursor-pointer text-rich-500">
+                            <li className="cursor-pointer text-rich-500"
+                            onClick={UpdateFolder}>
                               Update
                             </li>
                             <li

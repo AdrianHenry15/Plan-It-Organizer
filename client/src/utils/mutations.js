@@ -70,3 +70,11 @@ export const REMOVE_FOLDER = gql`
     }
   }
 `;
+
+export const UPDATE_FOLDER = gql`
+mutation Mutation($id: ID!, $title: String!) {
+  updateFolder(_id: $id, title: $title) {
+    _id
+    title
+  }
+}`
