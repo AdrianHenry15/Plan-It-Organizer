@@ -6,7 +6,7 @@
 
 This app is a way to keep track of your life.  It offers the ability to create folders filled with aspirations. 
 
-![screenshot](./Plan%20It.png),
+![screenshot](./Plan%20It.png)
 
  # Table of Contents
 * [Tools](#tools)
@@ -27,9 +27,9 @@ The following tools were used for this application:
 - JWTs
 - MongoDB
 - Mongoose
-- express
-- Appollo
-- bcrypt
+- Express
+- Apollo
+- BCrypt
 
 
 # Usage
@@ -38,15 +38,26 @@ This application lets the user sign in and create different aspirations to store
 
 # Contributing
 
-- https://github.com/AdrianHenry15
-- https://github.com/garretthilberling
-- https://github.com/jaredpennington
-- https://github.com/Acampbell8610
+- [Adrian Henry](https://github.com/AdrianHenry15)
+- [Garret Hilberling](https://github.com/garretthilberling)
+- [Jared Pennington](https://github.com/jaredpennington)
+- [Alex Campbell](https://github.com/Acampbell8610)
 
 # Questions
 
-If you have any questions about the repo, open an issue or contact me on GitHub at adrianhenry15 or contact my our email addresses
-address at adrianhenry2115@gmail.com,
+If you have any questions about the repo, open an issue or contact us on GitHub or LinkedIn:
+- ### Garret Hilberling
+  - [LinkedIn](https://www.linkedin.com/in/garretthilberling/) 
+  - [GitHub](https://github.com/garretthilberling)
+- ### Jared Pennington
+  - [LinkedIn](https://www.linkedin.com/in/jpennington000/) 
+  - [GitHub](https://github.com/jaredpennington)
+- ### Alex Campbell
+  - [LinkedIn](https://www.linkedin.com/in/alex-campbell-b9027010b/) 
+  - [GitHub](https://github.com/Acampbell8610)
+- ### Adrian Henry
+  - [LinkedIn](https://www.linkedin.com/in/adrian-henry-199595207/)
+  - [GitHub](https://github.com/AdrianHenry15)
 
 ## License:
 
