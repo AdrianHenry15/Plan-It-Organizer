@@ -10,6 +10,7 @@ import { REMOVE_FOLDER } from "../utils/mutations";
 const Home = ({ folderId, setFolderId }) => {
   const { loading, data } = useQuery(QUERY_ME);
   const [output, setOutput] = useState("Loading...");
+  let myId;
 
   const [removeFolder, { err }] = useMutation(REMOVE_FOLDER, {
     update(cache, { data: { removeFolder } }) {
@@ -27,15 +28,14 @@ const Home = ({ folderId, setFolderId }) => {
   });
 
   const handleMouseOver = (id) => {
-    setFolderId(id);
-    console.log(id, folderId);
+    myId = id;
   };
 
   const handleRemoveFolder = async (event) => {
     event.preventDefault();
     try {
       await removeFolder({
-        variables: { id: folderId },
+        variables: { id: myId },
       });
     } catch (e) {
       console.error(e);
@@ -72,19 +72,19 @@ const Home = ({ folderId, setFolderId }) => {
                         </div>
                       </Link>
                       <div key={`dots-${index}`} className="dots-position">
-                        <div className="dropdown">
+                        <div className="dropdown ">
                           <button
                             onMouseOver={() => handleMouseOver(folder._id)}
-                            className="dropbtn text-3xl"
+                            className="dropbtn text-3xl "
                           >
                             ...
                           </button>
                           <ul className="dropdown-content">
-                            <li className="cursor-pointer text-rich-500">
+                            <li className="cursor-pointer text-rich-500 bg-bubblegum-300">
                               Update
                             </li>
                             <li
-                              className="cursor-pointer text-rose-400"
+                              className="cursor-pointer text-rose-400 bg-bubblegum-300"
                               onClick={handleRemoveFolder}
                             >
                               Delete
