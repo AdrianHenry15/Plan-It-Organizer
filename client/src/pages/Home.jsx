@@ -11,6 +11,7 @@ import UpdateFolder from "../components/UpdateFolderMethod"
 const Home = ({ folderId, setFolderId }) => {
   const { loading, data } = useQuery(QUERY_ME);
   const [output, setOutput] = useState("Loading...");
+  const [update, setUpdate] = useState(false)
 
   const [removeFolder, { err }] = useMutation(REMOVE_FOLDER, {
     update(cache, { data: { removeFolder } }) {
@@ -43,6 +44,12 @@ const Home = ({ folderId, setFolderId }) => {
     }
   };
 
+  const handleUpdateClick = () => {
+    
+    setUpdate(true)
+
+  }
+
   useEffect(() => {
     if (loading) {
       return () => {
@@ -58,6 +65,7 @@ const Home = ({ folderId, setFolderId }) => {
             <div>
               <div>
                 <FolderForm />
+                {update && <UpdateFolder folderId={folderId}/>}
                 <div className="grid md:grid-cols-3 grid-cols-2 content-around m-4">
                   {folders.map((folder, index) => (
                     <div key={index} className="relative">
@@ -82,7 +90,7 @@ const Home = ({ folderId, setFolderId }) => {
                           </button>
                           <ul className="dropdown-content">
                             <li className="cursor-pointer text-rich-500"
-                            onClick={UpdateFolder}>
+                            onClick={handleUpdateClick}>
                               Update
                             </li>
                             <li

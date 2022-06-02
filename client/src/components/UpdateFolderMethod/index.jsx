@@ -29,8 +29,8 @@ const UpdateFolder = ({folderId, setFolderId}) => {
       };
 
       const handleMouseOver = (id) => {
-        setFolderId(id);
-      };
+    setFolderId(id);
+  };
 
       const handleUpdateFolder = async (event) => {
         event.preventDefault();
@@ -59,6 +59,14 @@ const UpdateFolder = ({folderId, setFolderId}) => {
       />
     </form>
   </div>
+
+  // <div className='modalBackdrop'
+  // onSubmit={handleUpdateFolder}>
+  //   <div className='modalContainer'>
+  //     <h3 className='modalTitle'
+  //     onChange={handleChange}>{folderText}</h3>
+  //   </div>
+  // </div>
   )
 }
 
