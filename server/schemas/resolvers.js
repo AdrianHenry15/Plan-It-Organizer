@@ -31,7 +31,7 @@ const resolvers = {
         },
         // get single folder
         folder: async (parent, { _id }) => {
-            return Folder.findOne({ _id });
+            return await Folder.findById(_id);
         },
         // get all users
         users: async () => {

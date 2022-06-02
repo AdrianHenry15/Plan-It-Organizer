@@ -28,11 +28,11 @@ const Home = ({ folderId, setFolderId }) => {
 
   const handleMouseOver = (id) => {
     setFolderId(id);
+    console.log(id, folderId);
   };
 
   const handleRemoveFolder = async (event) => {
     event.preventDefault();
-    console.log(folderId);
     try {
       await removeFolder({
         variables: { id: folderId },
