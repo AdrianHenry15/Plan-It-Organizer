@@ -27,15 +27,12 @@ const Home = ({ folderId, setFolderId }) => {
   });
 
   const handleMouseOver = (id) => {
-    // console.log(id)
     setFolderId(id);
-    console.log(folderId);
+    console.log(id, folderId);
   };
 
-  // functions and handlers go here:
   const handleRemoveFolder = async (event) => {
     event.preventDefault();
-    console.log(folderId);
     try {
       await removeFolder({
         variables: { id: folderId },
@@ -44,8 +41,6 @@ const Home = ({ folderId, setFolderId }) => {
       console.error(e);
     }
   };
-
-  // end of delete folder handlers by Adrian
 
   useEffect(() => {
     if (loading) {
@@ -79,10 +74,7 @@ const Home = ({ folderId, setFolderId }) => {
                       <div key={`dots-${index}`} className="dots-position">
                         <div className="dropdown">
                           <button
-                            onMouseOver={() => {
-                              setFolderId(folder._id);
-                              console.log(folderId);
-                            }}
+                            onMouseOver={() => handleMouseOver(folder._id)}
                             className="dropbtn text-3xl"
                           >
                             ...
