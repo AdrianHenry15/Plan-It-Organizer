@@ -75,7 +75,7 @@ html, body {
   .bm-burger-bars {
     background: #fff;
     transition: all 500ms ease;
-    position: none !important;
+    /* position: none !important; */
   }
   
   /* Color/shape of burger icon bars on */
